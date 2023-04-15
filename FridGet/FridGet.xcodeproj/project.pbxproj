@@ -8,21 +8,35 @@
 
 /* Begin PBXBuildFile section */
 		71A7EDA129E9459E0082E1C9 /* FridGetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */; };
-		71A7EDA329E9459E0082E1C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA229E9459E0082E1C9 /* ContentView.swift */; };
+		71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */; };
 		71A7EDA529E9459F0082E1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A7EDA429E9459F0082E1C9 /* Assets.xcassets */; };
 		71A7EDA829E9459F0082E1C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */; };
 		71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA929E9459F0082E1C9 /* Persistence.swift */; };
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
+		C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2D29EB1CC400FC77FB /* TextInputField.swift */; };
+		C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */; };
+		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
+		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
+		DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178F29EB0E6C00B69181 /* HomeView.swift */; };
+		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
+		DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* SecureInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71A7ED9D29E9459E0082E1C9 /* FridGet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridGet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridGetApp.swift; sourceTree = "<group>"; };
-		71A7EDA229E9459E0082E1C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTemplateView.swift; sourceTree = "<group>"; };
 		71A7EDA429E9459F0082E1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71A7EDA929E9459F0082E1C9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
+		C5366E2D29EB1CC400FC77FB /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
+		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE62178F29EB0E6C00B69181 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = FridGet/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
+		DE62179429EB1A2000B69181 /* SecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +69,10 @@
 		71A7ED9F29E9459E0082E1C9 /* FridGet */ = {
 			isa = PBXGroup;
 			children = (
+				DE62179329EB19F500B69181 /* Components */,
+				DE62178A29EAFE6400B69181 /* Views */,
 				71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */,
-				71A7EDA229E9459E0082E1C9 /* ContentView.swift */,
+				DE62178D29EB0CF000B69181 /* ContentView.swift */,
 				71A7EDA429E9459F0082E1C9 /* Assets.xcassets */,
 				71A7EDA929E9459F0082E1C9 /* Persistence.swift */,
 				71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */,
@@ -71,6 +87,27 @@
 				71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DE62178A29EAFE6400B69181 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE62178F29EB0E6C00B69181 /* HomeView.swift */,
+				DE62178829EAFE1900B69181 /* AuthView.swift */,
+				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
+				DE62179129EB116500B69181 /* PreAuthView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DE62179329EB19F500B69181 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DE62179429EB1A2000B69181 /* SecureInputField.swift */,
+				C5366E2D29EB1CC400FC77FB /* TextInputField.swift */,
+				C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,9 +180,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
+				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
+				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
+				DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */,
+				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
+				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
-				71A7EDA329E9459E0082E1C9 /* ContentView.swift in Sources */,
+				71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */,
 				71A7EDA129E9459E0082E1C9 /* FridGetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
