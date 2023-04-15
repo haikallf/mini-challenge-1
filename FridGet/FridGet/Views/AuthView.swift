@@ -39,7 +39,6 @@ struct AuthView: View {
                 }
                 .opacity(isLogin ? 0 : 1)
                 
-                
                 VStack(spacing: 4) {
                     HStack {
                         Text("Email")
@@ -58,10 +57,7 @@ struct AuthView: View {
                             .fontWeight(.bold)
                         Spacer()
                     }
-                    SecureField("\(isLogin ? "Enter" : "Create") a Password", text: $password)
-                        .textInputAutocapitalization(.never)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
+                    SecureInputField("\(isLogin ? "Enter" : "Create") a Password", text: $password)
                 }
                 
                 Button(action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }) {

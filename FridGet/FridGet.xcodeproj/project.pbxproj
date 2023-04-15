@@ -17,6 +17,7 @@
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 		DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178F29EB0E6C00B69181 /* HomeView.swift */; };
 		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
+		DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* SecureInputField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE62178F29EB0E6C00B69181 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = FridGet/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
+		DE62179429EB1A2000B69181 /* SecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		71A7ED9F29E9459E0082E1C9 /* FridGet */ = {
 			isa = PBXGroup;
 			children = (
+				DE62179329EB19F500B69181 /* Components */,
 				DE62178A29EAFE6400B69181 /* Views */,
 				71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */,
 				DE62178D29EB0CF000B69181 /* ContentView.swift */,
@@ -91,6 +94,14 @@
 				DE62179129EB116500B69181 /* PreAuthView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		DE62179329EB19F500B69181 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DE62179429EB1A2000B69181 /* SecureInputField.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +176,7 @@
 			files = (
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
+				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
 				DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
