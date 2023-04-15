@@ -16,6 +16,7 @@
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 		DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178F29EB0E6C00B69181 /* HomeView.swift */; };
+		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE62178F29EB0E6C00B69181 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = FridGet/HomeView.swift; sourceTree = SOURCE_ROOT; };
+		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				DE62178F29EB0E6C00B69181 /* HomeView.swift */,
 				DE62178829EAFE1900B69181 /* AuthView.swift */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
+				DE62179129EB116500B69181 /* PreAuthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,

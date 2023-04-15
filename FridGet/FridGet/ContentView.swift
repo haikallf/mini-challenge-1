@@ -16,7 +16,7 @@ struct ContentView: View {
                 if self.isUserCurrentlyLoggedIn {
                     HomeView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
                 } else {
-                    AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
+                    PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
                 }
             }
         }

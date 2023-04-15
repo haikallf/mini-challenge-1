@@ -9,8 +9,7 @@ import SwiftUI
 
 struct AuthView: View {
     @Binding var isUserCurrentlyLoggedIn: Bool
-    
-    @State var isLogin: Bool = false
+    @State var isLogin: Bool
     
     @State var email: String = ""
     @State var password: String = ""
@@ -99,11 +98,12 @@ struct AuthView: View {
             }
         }
         .padding()
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView(isUserCurrentlyLoggedIn: .constant(false))
+        AuthView(isUserCurrentlyLoggedIn: .constant(false), isLogin: false)
     }
 }
