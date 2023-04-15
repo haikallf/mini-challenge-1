@@ -31,11 +31,8 @@ struct AuthView: View {
                             .fontWeight(.bold)
                         Spacer()
                     }
-                    TextField("Alex Taylor", text: $fullname)
+                    TextInputField("Alex Taylor", text: $fullname)
                         .disabled(isLogin)
-                        .textInputAutocapitalization(.never)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
                 }
                 .opacity(isLogin ? 0 : 1)
                 
@@ -45,10 +42,7 @@ struct AuthView: View {
                             .fontWeight(.bold)
                         Spacer()
                     }
-                    TextField("Enter your email", text: $email)
-                        .textInputAutocapitalization(.never)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
+                    TextInputField("Enter your email", text: $email)
                 }
                 
                 VStack(spacing: 4) {
@@ -60,15 +54,7 @@ struct AuthView: View {
                     SecureInputField("\(isLogin ? "Enter" : "Create") a Password", text: $password)
                 }
                 
-                Button(action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }) {
-                    Text(isLogin ? "Log In" : "Create Account")
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding()
-                        
-                }
-                .background(.purple)
-                .cornerRadius(10)
+                CustomButton(text: isLogin ? "Log In" : "Create Account", action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }, isBordered: false)
                 
                 HStack {
                     if (!isLogin) {
