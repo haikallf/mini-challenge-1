@@ -24,61 +24,76 @@ struct AuthView: View {
                 .padding(.bottom, 80)
             
             VStack(spacing: 20) {
-                HStack {
-                    Image(systemName: "envelope")
-                        .foregroundColor(.gray)
-                    TextField("Email", text: $email)
-                        .textInputAutocapitalization(.never)
-                }
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
-                
-                HStack {
-                    Image(systemName: "key")
-                        .foregroundColor(.gray)
-                    SecureField("Password", text: $password)
-                }
-                .padding()
-                .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
-                
-                if (!isLogin) {
+                VStack(spacing: 4) {
                     HStack {
-                        Image(systemName: "person")
-                            .foregroundColor(.gray)
-                        TextField("Full Name", text: $fullname)
-                            .textInputAutocapitalization(.never)
+                        Text("Name")
+                            .fontWeight(.bold)
+                        Spacer()
                     }
-                    .padding()
-                    .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
+                    TextField("Alex Taylor", text: $fullname)
+                        .disabled(isLogin)
+                        .textInputAutocapitalization(.never)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
                 }
-            }
-            
-            Spacer()
-            
-            Button("\(isLogin ? "Login" : "Register")") {
-                print(isLogin ? "Login Button Clicker" : "Register Button Clicked")
-            }
-            .buttonStyle(.bordered)
-            .padding(10)
-            .background(.blue)
-            .foregroundColor(.white)
-            .cornerRadius(10)
-            .padding(.bottom, 10)
-            
-            HStack {
-                if (!isLogin) {
-                    Text("Have an account?")
-                    
-                    Button("Login") {
-                        isLogin = true
-                    }.buttonStyle(.borderless)
-                } else {
-                    Text("Don't have an account?")
-                    
-                    Button("Register") {
-                        isLogin = false
-                    }.buttonStyle(.borderless)
+                .opacity(isLogin ? 0 : 1)
+                
+                
+                VStack(spacing: 4) {
+                    HStack {
+                        Text("Email")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    TextField("Enter your email", text: $email)
+                        .textInputAutocapitalization(.never)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
                 }
+                
+                VStack(spacing: 4) {
+                    HStack {
+                        Text("Password")
+                            .fontWeight(.bold)
+                        Spacer()
+                    }
+                    SecureField("\(isLogin ? "Enter" : "Create") a Password", text: $password)
+                        .textInputAutocapitalization(.never)
+                        .padding()
+                        .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
+                }
+                
+                Button(action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }) {
+                    Text(isLogin ? "Log In" : "Create Account")
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.white)
+                        .padding()
+                        
+                }
+                .background(.purple)
+                .cornerRadius(10)
+                
+                HStack {
+                    if (!isLogin) {
+                        Text("Have an account?")
+                        
+                        Button("Log In") {
+                            isLogin = true
+                            fullname = ""
+                        }
+                        .buttonStyle(.borderless)
+                        .foregroundColor(.purple)
+                    } else {
+                        Text("Don't have an account?")
+                        
+                        Button("Create an Account") {
+                            isLogin = false
+                        }
+                        .buttonStyle(.borderless)
+                        .foregroundColor(.purple)
+                    }
+                }
+                Spacer()
             }
         }
         .padding()
