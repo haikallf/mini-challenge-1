@@ -8,23 +8,25 @@
 
 /* Begin PBXBuildFile section */
 		71A7EDA129E9459E0082E1C9 /* FridGetApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */; };
-		71A7EDA329E9459E0082E1C9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA229E9459E0082E1C9 /* ContentView.swift */; };
+		71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */; };
 		71A7EDA529E9459F0082E1C9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A7EDA429E9459F0082E1C9 /* Assets.xcassets */; };
 		71A7EDA829E9459F0082E1C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */; };
 		71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA929E9459F0082E1C9 /* Persistence.swift */; };
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
+		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		71A7ED9D29E9459E0082E1C9 /* FridGet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FridGet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FridGetApp.swift; sourceTree = "<group>"; };
-		71A7EDA229E9459E0082E1C9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataTemplateView.swift; sourceTree = "<group>"; };
 		71A7EDA429E9459F0082E1C9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71A7EDA929E9459F0082E1C9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,7 +61,7 @@
 			children = (
 				DE62178A29EAFE6400B69181 /* Views */,
 				71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */,
-				71A7EDA229E9459E0082E1C9 /* ContentView.swift */,
+				DE62178D29EB0CF000B69181 /* ContentView.swift */,
 				71A7EDA429E9459F0082E1C9 /* Assets.xcassets */,
 				71A7EDA929E9459F0082E1C9 /* Persistence.swift */,
 				71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */,
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				DE62178829EAFE1900B69181 /* AuthView.swift */,
+				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,8 +159,9 @@
 			files = (
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
-				71A7EDA329E9459E0082E1C9 /* ContentView.swift in Sources */,
+				71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */,
 				71A7EDA129E9459E0082E1C9 /* FridGetApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
