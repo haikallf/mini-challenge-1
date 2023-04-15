@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AuthView: View {
+    @Binding var isUserCurrentlyLoggedIn: Bool
+    
     @State var isLogin: Bool = false
     
     @State var email: String = ""
@@ -102,6 +104,6 @@ struct AuthView: View {
 
 struct AuthView_Previews: PreviewProvider {
     static var previews: some View {
-        AuthView()
+        AuthView(isUserCurrentlyLoggedIn: .constant(false))
     }
 }
