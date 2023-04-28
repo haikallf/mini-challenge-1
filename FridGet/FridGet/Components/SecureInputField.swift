@@ -19,26 +19,32 @@ struct SecureInputField: View {
     }
     
     var body: some View {
-        ZStack(alignment: .trailing) {
-            Group {
-                if isSecured {
-                    SecureField(title, text: $text)
-                } else {
-                    TextField(title, text: $text)
+        VStack {
+            ZStack(alignment: .trailing) {
+                Group {
+                    if isSecured {
+                        SecureField(title, text: $text)
+                    } else {
+                        TextField(title, text: $text)
+                    }
+                }
+                .textInputAutocapitalization(.never)
+                .padding([.vertical], 11)
+                .padding(.trailing, 40)
+
+                Button(action: {
+                    isSecured.toggle()
+                }) {
+                    Image(systemName: self.isSecured ? "eye.slash" : "eye")
+                        .accentColor(.gray)
+                        .padding(.trailing)
                 }
             }
-            .textInputAutocapitalization(.never)
-            .padding()
-            .padding(.trailing, 40)
-            .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
-
-            Button(action: {
-                isSecured.toggle()
-            }) {
-                Image(systemName: self.isSecured ? "eye.slash" : "eye")
-                    .accentColor(.gray)
-                    .padding()
-            }
+            
+            Divider()
+             .frame(height: 1)
+             .padding(.horizontal, 30)
+             .background(.secondary)
         }
     }
 }
