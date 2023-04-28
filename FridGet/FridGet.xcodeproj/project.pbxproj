@@ -15,6 +15,9 @@
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
 		C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2D29EB1CC400FC77FB /* TextInputField.swift */; };
 		C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */; };
+		C5B2F69A29FC544900D16C62 /* PreAuthAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */; };
+		C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */; };
+		C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */; };
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 		DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178F29EB0E6C00B69181 /* HomeView.swift */; };
@@ -33,6 +36,9 @@
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
 		C5366E2D29EB1CC400FC77FB /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthAdapter.swift; sourceTree = "<group>"; };
+		C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthIntro.swift; sourceTree = "<group>"; };
+		C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthCarousel.swift; sourceTree = "<group>"; };
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE62178F29EB0E6C00B69181 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = FridGet/HomeView.swift; sourceTree = SOURCE_ROOT; };
@@ -71,6 +77,7 @@
 		71A7ED9F29E9459E0082E1C9 /* FridGet */ = {
 			isa = PBXGroup;
 			children = (
+				C5B2F69729FC540200D16C62 /* Model */,
 				DE62179329EB19F500B69181 /* Components */,
 				DE62178A29EAFE6400B69181 /* Views */,
 				71A7EDA029E9459E0082E1C9 /* FridGetApp.swift */,
@@ -91,13 +98,31 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C5B2F69729FC540200D16C62 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C5B2F69829FC543100D16C62 /* PreAuth */ = {
+			isa = PBXGroup;
+			children = (
+				DE62179129EB116500B69181 /* PreAuthView.swift */,
+				C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */,
+				C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */,
+			);
+			path = PreAuth;
+			sourceTree = "<group>";
+		};
 		DE62178A29EAFE6400B69181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5B2F69829FC543100D16C62 /* PreAuth */,
 				DE62178F29EB0E6C00B69181 /* HomeView.swift */,
 				DE62178829EAFE1900B69181 /* AuthView.swift */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
-				DE62179129EB116500B69181 /* PreAuthView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,16 +208,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */,
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
 				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
 				DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
+				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
+				C5B2F69A29FC544900D16C62 /* PreAuthAdapter.swift in Sources */,
 				71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */,
 				71A7EDA129E9459E0082E1C9 /* FridGetApp.swift in Sources */,
 			);

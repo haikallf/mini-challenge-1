@@ -10,34 +10,37 @@ import SwiftUI
 struct NavigationButton<Destination: View>: View {
     let destination: Destination
     let text: String
-    let isBordered: Bool = false
+    var isBordered: Bool = false
+    let maxWidth: CGFloat = .infinity
     
     var body: some View {
         Group {
             if(isBordered) {
                 NavigationLink(destination: destination) {
                     Text(text)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
-                        .padding()
-                    
-                }
-                .background(.purple)
-                .cornerRadius(10)
-            } else {
-                NavigationLink(destination: destination) {
-                    Text(text)
-                        .frame(maxWidth: .infinity)
-                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: maxWidth)
+                        .foregroundColor(.primary)
                         .padding()
                         .overlay(
-                            RoundedRectangle(cornerRadius: 10)
-                                .stroke(.black, lineWidth: 2)
+                            RoundedRectangle(cornerRadius: 1000)
+                                .stroke(.white, lineWidth: 2)
                         )
                     
                 }
-                .background(.purple)
-                .cornerRadius(10)
+                .background(Color("grayBg"))
+                .cornerRadius(1000)
+            } else {
+                NavigationLink(destination: destination) {
+                    Text(text)
+                        .font(.system(size: 17))
+                        .fontWeight(.semibold)
+                        .frame(maxWidth: maxWidth)
+                        .foregroundColor(.white)
+                        .padding()
+                }
+                .background(.primary)
+                .cornerRadius(1000)
                 
             }
         }
