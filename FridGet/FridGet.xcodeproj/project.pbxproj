@@ -18,9 +18,11 @@
 		C5B2F69A29FC544900D16C62 /* PreAuthAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */; };
 		C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */; };
 		C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */; };
+		C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A129FC5F5C00D16C62 /* EventView.swift */; };
+		C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A429FC611400D16C62 /* NoEvent.swift */; };
+		C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A629FC677900D16C62 /* EventCard.swift */; };
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
-		DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178F29EB0E6C00B69181 /* HomeView.swift */; };
 		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
 		DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* SecureInputField.swift */; };
 		DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179629FBDD5B00B69181 /* NavigationButton.swift */; };
@@ -39,9 +41,11 @@
 		C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthAdapter.swift; sourceTree = "<group>"; };
 		C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthIntro.swift; sourceTree = "<group>"; };
 		C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthCarousel.swift; sourceTree = "<group>"; };
+		C5B2F6A129FC5F5C00D16C62 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		C5B2F6A429FC611400D16C62 /* NoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoEvent.swift; sourceTree = "<group>"; };
+		C5B2F6A629FC677900D16C62 /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		DE62178F29EB0E6C00B69181 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HomeView.swift; path = FridGet/HomeView.swift; sourceTree = SOURCE_ROOT; };
 		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
 		DE62179429EB1A2000B69181 /* SecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputField.swift; sourceTree = "<group>"; };
 		DE62179629FBDD5B00B69181 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
@@ -116,11 +120,21 @@
 			path = PreAuth;
 			sourceTree = "<group>";
 		};
+		C5B2F6A329FC60CD00D16C62 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				C5B2F6A129FC5F5C00D16C62 /* EventView.swift */,
+				C5B2F6A429FC611400D16C62 /* NoEvent.swift */,
+				C5B2F6A629FC677900D16C62 /* EventCard.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
 		DE62178A29EAFE6400B69181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5B2F6A329FC60CD00D16C62 /* Event */,
 				C5B2F69829FC543100D16C62 /* PreAuth */,
-				DE62178F29EB0E6C00B69181 /* HomeView.swift */,
 				DE62178829EAFE1900B69181 /* AuthView.swift */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
 			);
@@ -213,10 +227,12 @@
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
 				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
-				DE62179029EB0E6C00B69181 /* HomeView.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
+				C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */,
+				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
