@@ -12,7 +12,7 @@ struct CustomButton: View {
     var action: () -> Void
     var isBordered: Bool
     var width: Double = .infinity
-    var color: Color = .purple
+    var color: Color = .black
     
     var body: some View {
         if (isBordered) {
@@ -27,16 +27,18 @@ struct CustomButton: View {
                     )
             }
             .background(.white)
-            .cornerRadius(10)
+            .cornerRadius(1000)
         } else {
             Button(action: action) {
                 Text(text)
+                    .font(.system(size: 17))
+                    .fontWeight(.semibold)
                     .frame(maxWidth: width)
                     .foregroundColor(.white)
                     .padding()
             }
             .background(color)
-            .cornerRadius(10)
+            .cornerRadius(1000)
         }
     }
 }

@@ -17,10 +17,16 @@ struct TextInputField: View {
     }
     
     var body: some View {
-        TextField(title, text: $text)
-            .textInputAutocapitalization(.never)
-            .padding()
-            .overlay(RoundedRectangle(cornerRadius: 10.0).strokeBorder(Color.black, style: StrokeStyle(lineWidth: 0.5)))
+        VStack {
+            TextField(title, text: $text)
+                .textInputAutocapitalization(.never)
+                .padding([.vertical], 11)
+            
+            Divider()
+             .frame(height: 1)
+             .padding(.horizontal, 30)
+             .background(.secondary)
+        }
     }
 }
 

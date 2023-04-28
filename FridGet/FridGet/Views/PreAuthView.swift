@@ -32,15 +32,17 @@ struct PreAuthView: View {
             .background(.white)
             .cornerRadius(10)
             
-            NavigationLink(destination: AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn, isLogin: false)) {
-                Text("Create an Account")
-                    .frame(maxWidth: .infinity)
-                    .foregroundColor(.white)
-                    .padding()
-                
-            }
-            .background(.purple)
-            .cornerRadius(10)
+            NavigationButton(destination: AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn, isLogin: false), text: "Create account")
+            
+//            NavigationLink(destination: ) {
+//                Text("Create an Account")
+//                    .frame(maxWidth: .infinity)
+//                    .foregroundColor(.white)
+//                    .padding()
+//
+//            }
+//            .background(.purple)
+//            .cornerRadius(10)
         }
         .padding()
     }

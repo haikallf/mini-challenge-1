@@ -19,65 +19,64 @@ struct AuthView: View {
         VStack {
             Spacer()
             
-            Rectangle()
-                .frame(width: 140, height: 140)
-                .foregroundColor(.gray)
-                .padding(.bottom, 80)
-            
-            VStack(spacing: 20) {
-                VStack(spacing: 4) {
-                    HStack {
-                        Text("Name")
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    TextInputField("Alex Taylor", text: $fullname)
-                        .disabled(isLogin)
-                }
-                .opacity(isLogin ? 0 : 1)
-                
-                VStack(spacing: 4) {
-                    HStack {
-                        Text("Email")
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    TextInputField("Enter your email", text: $email)
-                }
-                
-                VStack(spacing: 4) {
-                    HStack {
-                        Text("Password")
-                            .fontWeight(.bold)
-                        Spacer()
-                    }
-                    SecureInputField("\(isLogin ? "Enter" : "Create") a Password", text: $password)
-                }
-                
-                CustomButton(text: isLogin ? "Log In" : "Create Account", action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }, isBordered: false)
-                
-                HStack {
-                    if (!isLogin) {
-                        Text("Have an account?")
-                        
-                        Button("Log In") {
-                            isLogin = true
-                            fullname = ""
-                        }
-                        .buttonStyle(.borderless)
-                        .foregroundColor(.purple)
-                    } else {
-                        Text("Don't have an account?")
-                        
-                        Button("Create an Account") {
-                            isLogin = false
-                        }
-                        .buttonStyle(.borderless)
-                        .foregroundColor(.purple)
-                    }
-                }
+            HStack {
+                Text(isLogin ? "Welcome back!" : "Create your account")
+                    .font(.system(size: 28))
+                    .fontWeight(.bold)
                 Spacer()
             }
+            .padding(.bottom, 4)
+            
+            HStack {
+                Text(isLogin ? "Log in to access your account and stay connected." : "Stay connected with your circle of friends by creating an account now!")
+                    .font(.system(size: 17))
+                    .fontWeight(.regular)
+                Spacer()
+            }
+            .padding(.bottom, 64)
+            
+            VStack(spacing: 32) {
+                if (!isLogin) {
+                    TextInputField("Alex Taylor", text: $fullname)
+                }
+
+                TextInputField("example@email.com", text: $email)
+                
+                SecureInputField("Password", text: $password)
+            }
+            CustomButton(text: isLogin ? "Log In" : "Create Account", action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }, isBordered: false)
+                .padding(.top, 64)
+            
+            HStack {
+                if (!isLogin) {
+                    Text("Have an account?")
+                    
+                    Button(action: {
+                        isLogin = true
+                        fullname = ""
+                        
+                    }) {
+                        Text("Log in")
+                            .underline()
+                    }
+                    .buttonStyle(.borderless)
+                    .foregroundColor(.blue)
+                    
+                } else {
+                    Text("Don't have an account?")
+                    
+                    Button(action: {
+                        isLogin = false
+                    }) {
+                        Text("Create Account")
+                            .underline()
+                    }
+                    .buttonStyle(.borderless)
+                    .foregroundColor(.blue)
+                }
+            }
+            .padding(.top, 12)
+            Spacer()
         }
         .padding()
         .navigationBarBackButtonHidden(true)
