@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EventDetailView: View {
-    var eventStatus: String = "owner" // accepted, owner, pending
+    var eventStatus: String = "pending" // accepted, owner, pending
     
     var body: some View {
         ScrollView {
@@ -27,6 +27,10 @@ struct EventDetailView: View {
                 Spacer()
             }
             .padding(.vertical)
+            
+            if (eventStatus == "pending") {
+                InvitationCard()
+            }
             
             HStack {
                 VStack(alignment: .leading) {
