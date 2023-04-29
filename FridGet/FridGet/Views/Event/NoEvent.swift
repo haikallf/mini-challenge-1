@@ -30,6 +30,8 @@ struct NoEvent: View {
                     .fontWeight(.semibold)
                     .multilineTextAlignment(.center)
             }
+            
+            Spacer()
         }
     }
 }
