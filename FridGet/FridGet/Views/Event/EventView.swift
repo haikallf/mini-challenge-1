@@ -31,30 +31,33 @@ struct EventView: View {
             }
             else {
                 if (isPendingInvitation) {
-                    HStack {
-                        Image(systemName: "calendar")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 20)
-                        
-                        Text("Pending Invitation")
-                            .font(.system(size: 16))
-                        
-                        Spacer()
+                    NavigationLink(destination: PendingInvitationView()) {
+                        HStack {
+                            Image(systemName: "calendar")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 20)
+                            
+                            Text("Pending Invitation")
+                                .font(.system(size: 16))
+                            
+                            Spacer()
+                        }
+                        .padding()
+                        .frame(maxWidth: .infinity)
+                        .foregroundColor(.black)
+                        .cornerRadius(8)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color("grayBg"), lineWidth: 1)
+                        )
                     }
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .cornerRadius(8)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color("grayBg"), lineWidth: 1)
-                    )
                 }
                 
                 if (isAvailableOngoing) {
                     VStack(spacing: 24) {
                         EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
-                        EventCard(eventName: "Ini nama eventnya", isPending: true)
+                        EventCard(eventName: "Ini nama eventnya")
                     }
                 } else {
                     NoEvent(isOngoing: isOngoing)
