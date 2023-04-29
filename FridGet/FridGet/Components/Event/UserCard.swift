@@ -11,7 +11,7 @@ struct UserCard: View {
     var status: String // accepted, rejected, pending
     
     var body: some View {
-        HStack { 
+        HStack {
             InitialAvatar(initial: "HA")
             
             VStack(alignment: .leading, spacing: 4) {

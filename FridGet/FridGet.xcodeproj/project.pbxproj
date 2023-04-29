@@ -15,6 +15,7 @@
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
 		C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2D29EB1CC400FC77FB /* TextInputField.swift */; };
 		C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */; };
+		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
 		C5A8681A29FD979200AC8103 /* UserCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A8681929FD979200AC8103 /* UserCard.swift */; };
@@ -43,6 +44,7 @@
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
 		C5366E2D29EB1CC400FC77FB /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
 		C5A8681929FD979200AC8103 /* UserCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCard.swift; sourceTree = "<group>"; };
@@ -112,6 +114,27 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C5A524E329FDA8A3007B08C7 /* Event */ = {
+			isa = PBXGroup;
+			children = (
+				C5A8681B29FDA3A000AC8103 /* InvitationCard.swift */,
+				C5A8681929FD979200AC8103 /* UserCard.swift */,
+				C5B2F6A629FC677900D16C62 /* EventCard.swift */,
+				C5B2F6A429FC611400D16C62 /* NoEvent.swift */,
+				C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */,
+			);
+			path = Event;
+			sourceTree = "<group>";
+		};
+		C5A524E429FDA8BB007B08C7 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */,
+				C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		C5B2F69729FC540200D16C62 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,27 +143,21 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		C5B2F69829FC543100D16C62 /* PreAuth */ = {
+		C5B2F69829FC543100D16C62 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				DE62178829EAFE1900B69181 /* AuthView.swift */,
 				DE62179129EB116500B69181 /* PreAuthView.swift */,
-				C5B2F69929FC544900D16C62 /* PreAuthAdapter.swift */,
-				C5B2F69D29FC563600D16C62 /* PreAuthCarousel.swift */,
 			);
-			path = PreAuth;
+			path = Auth;
 			sourceTree = "<group>";
 		};
 		C5B2F6A329FC60CD00D16C62 /* Event */ = {
 			isa = PBXGroup;
 			children = (
 				C5B2F6A129FC5F5C00D16C62 /* EventView.swift */,
-				C5B2F6A429FC611400D16C62 /* NoEvent.swift */,
-				C5B2F6A629FC677900D16C62 /* EventCard.swift */,
 				C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */,
 				C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */,
-				C5A8681929FD979200AC8103 /* UserCard.swift */,
-				C5A8681B29FDA3A000AC8103 /* InvitationCard.swift */,
-				C5A8681D29FDA57B00AC8103 /* InitialAvatar.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -149,8 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B2F6A329FC60CD00D16C62 /* Event */,
-				C5B2F69829FC543100D16C62 /* PreAuth */,
-				DE62178829EAFE1900B69181 /* AuthView.swift */,
+				C5B2F69829FC543100D16C62 /* Auth */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
 			);
 			path = Views;
@@ -159,6 +175,9 @@
 		DE62179329EB19F500B69181 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C5A524E429FDA8BB007B08C7 /* Auth */,
+				C5A524E329FDA8A3007B08C7 /* Event */,
+				C5A8681D29FDA57B00AC8103 /* InitialAvatar.swift */,
 				DE62179429EB1A2000B69181 /* SecureInputField.swift */,
 				C5366E2D29EB1CC400FC77FB /* TextInputField.swift */,
 				C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */,
@@ -254,6 +273,7 @@
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
+				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
 				C5B2F69A29FC544900D16C62 /* PreAuthAdapter.swift in Sources */,
 				71A7EDA329E9459E0082E1C9 /* CoreDataTemplateView.swift in Sources */,
