@@ -29,7 +29,7 @@ struct SecureInputField: View {
                     }
                 }
                 .textInputAutocapitalization(.never)
-                .padding([.vertical], 11)
+                .padding([.vertical], 6)
                 .padding(.trailing, 40)
 
                 Button(action: {
@@ -44,7 +44,7 @@ struct SecureInputField: View {
             Divider()
              .frame(height: 1)
              .padding(.horizontal, 30)
-             .background(.secondary)
+             .background(Color("secondaryGray"))
         }
     }
 }

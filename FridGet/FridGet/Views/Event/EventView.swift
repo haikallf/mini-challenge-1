@@ -13,6 +13,8 @@ struct EventView: View {
     @State private var isAvailableHistory: Bool = false
     @State private var isAvailableOngoing: Bool = true
     @State var universalSize = UIScreen.main.bounds
+    @State private var showModal = false
+
     @Binding var isUserCurrentlyLoggedIn: Bool
     
     var body: some View {
@@ -80,7 +82,9 @@ struct EventView: View {
                     }
                 }
                 
-                Button(action: {}) {
+                Button(action: {
+                    showModal.toggle()
+                }) {
                     HStack {
                         Image(systemName: "plus.circle.fill")
                             .font(.system(size: 17))
@@ -94,6 +98,11 @@ struct EventView: View {
                     .padding()
                     .background(.blue)
                     .cornerRadius(1000)
+                    .sheet(isPresented: $showModal) {
+                        NavigationView {
+                            NewEventModal()
+                        }
+                    }
                 }
                 .offset(x: universalSize.maxX * 0.28, y: universalSize.maxY * 0.32)
             }

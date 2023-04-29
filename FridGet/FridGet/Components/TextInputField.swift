@@ -20,12 +20,13 @@ struct TextInputField: View {
         VStack {
             TextField(title, text: $text)
                 .textInputAutocapitalization(.never)
-                .padding([.vertical], 11)
+                .padding([.vertical], 1)
+                .multilineTextAlignment(.leading)
             
             Divider()
              .frame(height: 1)
              .padding(.horizontal, 30)
-             .background(.secondary)
+             .background(Color("secondaryGray"))
         }
     }
 }
