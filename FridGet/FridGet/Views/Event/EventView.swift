@@ -38,8 +38,7 @@ struct EventView: View {
                         } else {
                             NoEvent(isOngoing: isOngoing)
                         }
-                    }
-                    else {
+                    } else {
                         if (isPendingInvitation) {
                             NavigationLink(destination: PendingInvitationView()) {
                                 HStack {
@@ -82,26 +81,21 @@ struct EventView: View {
                 }
                 
                 Button(action: {}) {
-                    VStack {
-                        Spacer()
+                    HStack {
+                        Image(systemName: "plus.circle.fill")
+                            .font(.system(size: 17))
+                            .foregroundColor(.white)
+                            .shadow(color: .gray, radius: 0.2, x: 1, y: 1)
                         
-                        HStack {
-                            Image(systemName: "plus.circle.fill")
-                                .font(.system(size: 17))
-                                .foregroundColor(.white)
-                                .shadow(color: .gray, radius: 0.2, x: 1, y: 1)
-                            
-                            Text("New Event")
-                                .font(.system(size: 17))
-                                .foregroundColor(.white)
-                        }
-                        .padding()
-                        .background(.blue)
-                        .cornerRadius(1000)
-                        .offset(x: universalSize.midX * 0.55)
+                        Text("New Event")
+                            .font(.system(size: 17))
+                            .foregroundColor(.white)
                     }
-                    
+                    .padding()
+                    .background(.blue)
+                    .cornerRadius(1000)
                 }
+                .offset(x: universalSize.maxX * 0.28, y: universalSize.maxY * 0.32)
             }
             
             Spacer()
