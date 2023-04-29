@@ -11,13 +11,8 @@ struct UserCard: View {
     var status: String // accepted, rejected, pending
     
     var body: some View {
-        HStack {
-            Text("HA")
-                .font(.system(size: 12))
-                .padding(.all, 10)
-                .background(.gray)
-                .foregroundColor(.white)
-                .cornerRadius(.infinity)
+        HStack { 
+            InitialAvatar(initial: "HA")
             
             VStack(alignment: .leading, spacing: 4) {
                 Text("Haikal")
