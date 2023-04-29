@@ -103,7 +103,6 @@ struct EventView: View {
         .padding([.horizontal, .top])
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            
             ToolbarItemGroup(placement: .principal) {
                 HStack {
                     Text("Events")
