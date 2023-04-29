@@ -18,6 +18,7 @@ struct PendingInvitationView: View {
             Spacer()
         }
         .padding()
+        .navigationBarTitleDisplayMode(.inline)
         .navigationBarTitle(Text("Pending Invitation"))
     }
 }

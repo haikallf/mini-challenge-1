@@ -67,6 +67,25 @@ struct EventView: View {
             Spacer()
         }
         .padding()
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            
+            ToolbarItemGroup(placement: .principal) {
+                HStack {
+                    Text("Events")
+                        .font(.system(size: 34))
+                        .fontWeight(.bold)
+
+                    Spacer()
+
+                    Text("SJ")
+                        .padding(.all, 10)
+                        .background(.gray)
+                        .foregroundColor(.white)
+                        .cornerRadius(.infinity)
+                }
+            }
+        }
     }
 }
 

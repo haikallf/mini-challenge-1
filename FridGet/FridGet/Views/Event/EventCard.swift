@@ -48,17 +48,21 @@ struct EventCard: View {
                     Spacer()
                     
                     HStack {
-                        Image(systemName: "x.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 28)
-                            .foregroundColor(Color("gray"))
+                        Button(action: {}) {
+                            Image(systemName: "x.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 28)
+                                .foregroundColor(Color("gray"))
+                        }
                         
-                        Image(systemName: "checkmark.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 28)
-                            .foregroundColor(Color("gray"))
+                        Button(action: {}) {
+                            Image(systemName: "checkmark.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 28)
+                                .foregroundColor(Color("gray"))
+                        }
                     }
                     
                     Spacer()
