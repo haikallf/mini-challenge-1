@@ -12,7 +12,7 @@ struct InvitationCard: View {
     var isPending: Bool = false
     
     var body: some View {
-        NavigationLink(destination: EventDetailView()) {
+        VStack {
             HStack(alignment: .top) {
                 InitialAvatar(initial: "SJ")
                 
