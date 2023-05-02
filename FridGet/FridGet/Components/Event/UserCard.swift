@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct UserCard: View {
-    var status: String // accepted, rejected, pending
-    
+    var status: String // accepted, rejected, pending, organizer
+    var isArrived: Bool = false
     var body: some View {
         HStack {
             InitialAvatar(initial: "HA")
@@ -30,6 +30,11 @@ struct UserCard: View {
                         .font(.system(size: 12))
                         .foregroundColor(Color("red"))
                     
+                case "organizer":
+                    Text("Organizer")
+                        .font(.system(size: 12))
+                        .foregroundColor(Color("gray"))
+                    
                 default:
                     Text("Pending invitation")
                         .font(.system(size: 12))
@@ -38,12 +43,22 @@ struct UserCard: View {
             }
             
             Spacer()
+            
+            if (isArrived) {
+                Text("Arrived")
+                    .padding(.vertical, 4)
+                    .padding(.horizontal, 8)
+                    .font(.system(size: 11))
+                    .foregroundColor(.white)
+                    .background(Color("green"))
+                    .cornerRadius(1000)
+            }
         }
     }
 }
 
 struct UserCard_Previews: PreviewProvider {
     static var previews: some View {
-        UserCard(status: "pending")
+        UserCard(status: "accepted", isArrived: true)
     }
 }

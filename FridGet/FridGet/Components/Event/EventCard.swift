@@ -10,78 +10,103 @@ import SwiftUI
 struct EventCard: View {
     var eventName: String
     var isPending: Bool = false
+    var isOwner: Bool = false
+    var isHappening: Bool = false
     
     var body: some View {
         NavigationLink(destination: EventDetailView()) {
-            HStack(alignment: .top) {
-                VStack(alignment: .leading) {
-                    Text("Thursday, 27 April 2023 16.00")
-                        .foregroundColor(Color("gray"))
-                        .font(.system(size: 12))
-                    
-                    Text(eventName)
-                        .foregroundColor(.black)
-                        .font(.system(size: 16))
-                        .fontWeight(.semibold)
-                        .padding(.top, 2)
-                        .padding(.bottom, 1)
-                    
-                    HStack {
-                        Image(systemName: "mappin.circle.fill")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 16)
-                        
-                        Text("The Breeze")
-                            .font(.system(size: 13))
-                            .padding(.leading, -2)
+            HStack {
+                if (isPending) {
+                    Rectangle()
+                        .fill(Color("gray"))
+                        .frame(maxWidth: 4)
+                        .clipShape(Capsule())
+                } else {
+                    if (isOwner) {
+                        Rectangle()
+                            .fill(Color("indigo"))
+                            .frame(maxWidth: 4)
+                            .clipShape(Capsule())
+                    } else {
+                        Rectangle()
+                            .fill(Color("teal"))
+                            .frame(maxWidth: 4)
+                            .clipShape(Capsule())
                     }
-                    .foregroundColor(.black)
                 }
                 
-                Spacer()
-                
-                if (!isPending) {
-                    Image(systemName: "bell.fill")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .frame(width: 17)
-                        .foregroundColor(.black)
-                } else {
-                    VStack {
-                        Spacer()
-                        
-                        HStack {
-                            Button(action: {}) {
-                                Image(systemName: "x.circle.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 28)
-                                    .foregroundColor(Color("gray"))
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        if (isHappening) {
+                            HStack {
+                                Image(systemName: "dot.radiowaves.left.and.right")
+                                Text("Happening Now")
+                                    
                             }
+                            .font(.system(size: 11))
+                            .padding(5)
+                            .foregroundColor(.white)
+                            .background(.red)
+                            .cornerRadius(1000)
                             
-                            Button(action: {}) {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 28)
-                                    .foregroundColor(Color("gray"))
-                            }
+                        } else {
+                            Text("Thursday, 27 April 2023 16.00")
+                                .foregroundColor(Color("gray"))
+                                .font(.system(size: 12))
                         }
                         
-                        Spacer()
+                        
+                        Text(eventName)
+                            .foregroundColor(.black)
+                            .font(.system(size: 16))
+                            .fontWeight(.semibold)
+                            .padding(.top, 2)
+                            .padding(.bottom, 1)
+                        
+                        HStack {
+                            Image(systemName: "mappin.circle.fill")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 16)
+                                .foregroundColor(.blue)
+                            
+                            Text("The Breeze")
+                                .font(.system(size: 13))
+                                .padding(.leading, -2)
+                                .foregroundColor(.black)
+                        }
                     }
                     
+                    Spacer()
+                    
+                   if (isPending) {
+                        VStack {
+                            Spacer()
+                            
+                            HStack {
+                                Button(action: {}) {
+                                    Image(systemName: "x.circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 28)
+                                        .foregroundColor(Color("lightRed"))
+                                }
+                                
+                                Button(action: {}) {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 28)
+                                        .foregroundColor(Color("lightGreen"))
+                                }
+                            }
+                            
+                            Spacer()
+                        }
+                    }
                 }
-                
             }
-            .padding()
-            .frame(maxHeight: 100)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color("grayBg"), lineWidth: 1)
-        )
+            .frame(maxHeight: 80)
         }
     }
 }
