@@ -14,8 +14,13 @@ struct NewEventModal: View {
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
     @State var eventLocation: String = ""
+    @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
     @State var eventNotes: String = ""
+    
+    
     @State var isShowCancelAlert: Bool = false
+    @State var isShowAddGuestModal: Bool = false
+    @State var isShowLocationModal: Bool = false
 
     var body: some View {
         ZStack {
@@ -52,6 +57,31 @@ struct NewEventModal: View {
                             .multilineTextAlignment(.leading)
                     }
                     .padding([.leading, .vertical])
+                    .background(.white)
+                    .cornerRadius(8)
+                    
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text("Guests")
+                                .foregroundColor(.black)
+                            
+                            Spacer()
+                            HStack {
+                                Text(eventGuests.isEmpty ? "None" : "\(eventGuests.count)")
+                                Image(systemName: "chevron.right")
+                            }
+                            .foregroundColor(Color("secondaryGray"))
+                            .onTapGesture {
+                                isShowAddGuestModal.toggle()
+                            }
+                            .sheet(isPresented: $isShowAddGuestModal) {
+                                NavigationView {
+                                    AddGuestModal(eventGuests: $eventGuests)
+                                }
+                            }
+                        }
+                    }
+                    .padding()
                     .background(.white)
                     .cornerRadius(8)
                     

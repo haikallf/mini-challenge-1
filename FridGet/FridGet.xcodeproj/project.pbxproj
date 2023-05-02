@@ -15,6 +15,9 @@
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
 		C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2D29EB1CC400FC77FB /* TextInputField.swift */; };
 		C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */; };
+		C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14942A017DE500D966BA /* AddGuestModal.swift */; };
+		C53E14972A01875600D966BA /* EmailTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14962A01875600D966BA /* EmailTag.swift */; };
+		C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */ = {isa = PBXBuildFile; productRef = C53E14992A019D5E00D966BA /* WrapLayout */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
@@ -44,6 +47,8 @@
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
 		C5366E2D29EB1CC400FC77FB /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		C53E14942A017DE500D966BA /* AddGuestModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuestModal.swift; sourceTree = "<group>"; };
+		C53E14962A01875600D966BA /* EmailTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTag.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,6 +128,8 @@
 				C5B2F6A629FC677900D16C62 /* EventCard.swift */,
 				C5B2F6A429FC611400D16C62 /* NoEvent.swift */,
 				C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */,
+				C53E14942A017DE500D966BA /* AddGuestModal.swift */,
+				C53E14962A01875600D966BA /* EmailTag.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -202,6 +210,9 @@
 			dependencies = (
 			);
 			name = FridGet;
+			packageProductDependencies = (
+				C53E14992A019D5E00D966BA /* WrapLayout */,
+			);
 			productName = FridGet;
 			productReference = 71A7ED9D29E9459E0082E1C9 /* FridGet.app */;
 			productType = "com.apple.product-type.application";
@@ -230,6 +241,9 @@
 				Base,
 			);
 			mainGroup = 71A7ED9429E9459E0082E1C9;
+			packageReferences = (
+				C53E14982A019D5E00D966BA /* XCRemoteSwiftPackageReference "swiftui-WrapLayout" */,
+			);
 			productRefGroup = 71A7ED9E29E9459E0082E1C9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -258,8 +272,10 @@
 			files = (
 				C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */,
 				C5A8681E29FDA57B00AC8103 /* InitialAvatar.swift in Sources */,
+				C53E14972A01875600D966BA /* EmailTag.swift in Sources */,
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
+				C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
 				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
@@ -479,6 +495,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C53E14982A019D5E00D966BA /* XCRemoteSwiftPackageReference "swiftui-WrapLayout" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/FluidGroup/swiftui-WrapLayout.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C53E14992A019D5E00D966BA /* WrapLayout */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C53E14982A019D5E00D966BA /* XCRemoteSwiftPackageReference "swiftui-WrapLayout" */;
+			productName = WrapLayout;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */ = {
