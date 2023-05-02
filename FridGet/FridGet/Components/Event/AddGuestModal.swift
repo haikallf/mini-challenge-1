@@ -58,10 +58,17 @@ struct AddGuestModal: View {
                     .frame(height: 1)
             }
             
-            Text("The invitation can’t be sent if the email is not a registered account of Hangoutla.")
-                .font(.system(size: 12))
-                .foregroundColor(Color("secondaryGray"))
-                .multilineTextAlignment(.leading)
+            Group {
+                Text("The invitation ")
+                + Text("can’t be sent")
+                    .fontWeight(.medium)
+                + Text(" if the email is not a registered account of Hangoutla.")
+            }
+            .font(.system(size: 12))
+            .foregroundColor(Color("secondaryGray"))
+            .multilineTextAlignment(.leading)
+            
+                
             
             WrapLayout {
                 ForEach(tags, id: \.self) { tag in

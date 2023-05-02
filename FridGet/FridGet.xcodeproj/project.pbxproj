@@ -18,6 +18,8 @@
 		C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14942A017DE500D966BA /* AddGuestModal.swift */; };
 		C53E14972A01875600D966BA /* EmailTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14962A01875600D966BA /* EmailTag.swift */; };
 		C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */ = {isa = PBXBuildFile; productRef = C53E14992A019D5E00D966BA /* WrapLayout */; };
+		C565AD202A01A62E00666057 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD1F2A01A62E00666057 /* ProfileView.swift */; };
+		C565AD252A01ACFF00666057 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD242A01ACFF00666057 /* TableView.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
@@ -49,6 +51,8 @@
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C53E14942A017DE500D966BA /* AddGuestModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuestModal.swift; sourceTree = "<group>"; };
 		C53E14962A01875600D966BA /* EmailTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTag.swift; sourceTree = "<group>"; };
+		C565AD1F2A01A62E00666057 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C565AD242A01ACFF00666057 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -120,6 +124,14 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C565AD212A01ACC500666057 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C565AD242A01ACFF00666057 /* TableView.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		C5A524E329FDA8A3007B08C7 /* Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +188,7 @@
 				C5B2F6A329FC60CD00D16C62 /* Event */,
 				C5B2F69829FC543100D16C62 /* Auth */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
+				C565AD1F2A01A62E00666057 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,6 +196,7 @@
 		DE62179329EB19F500B69181 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C565AD212A01ACC500666057 /* Profile */,
 				C5A524E429FDA8BB007B08C7 /* Auth */,
 				C5A524E329FDA8A3007B08C7 /* Event */,
 				C5A8681D29FDA57B00AC8103 /* InitialAvatar.swift */,
@@ -274,6 +288,7 @@
 				C5A8681E29FDA57B00AC8103 /* InitialAvatar.swift in Sources */,
 				C53E14972A01875600D966BA /* EmailTag.swift in Sources */,
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
+				C565AD252A01ACFF00666057 /* TableView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
@@ -284,6 +299,7 @@
 				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				C565AD202A01A62E00666057 /* ProfileView.swift in Sources */,
 				C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */,
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,

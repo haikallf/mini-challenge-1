@@ -24,12 +24,10 @@ struct EventView: View {
                 .fontWeight(.bold)
 
             Spacer()
-
-            Text("SJ")
-                .padding(.all, 10)
-                .background(.gray)
-                .foregroundColor(.white)
-                .cornerRadius(.infinity)
+            
+            NavigationLink(destination: ProfileView()) {
+                InitialAvatar(initial: "HA", fontSize: 20)
+            }
         }
         .padding(.top, 44)
         .padding(.horizontal)
@@ -92,7 +90,7 @@ struct EventView: View {
                         if (isAvailableOngoing) {
                             ScrollView {
                                 VStack(spacing: 12) {
-                                    // arr.enumerated() idx, elmt in
+                                    // ForEach(arr.enumerated()) { idx, elmt in
                                     ForEach(1..<10) { idx in
                                         Group {
                                             EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
