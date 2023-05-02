@@ -36,7 +36,7 @@ struct InvitationCard: View {
                     
                     HStack {
                         Button(action: {}) {
-                            Image(systemName: "x.circle.fill")
+                            Image(systemName: "xmark.circle.fill")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 28)
