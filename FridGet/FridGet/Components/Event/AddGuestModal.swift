@@ -14,6 +14,8 @@ struct AddGuestModal: View {
     @Binding var emails: [String]
     @State var email: String = ""
     @State var tags: [String]
+    
+    var currentEmail = "haikal@email.com"
 
     let screenWidth = UIScreen.main.bounds.width
     
@@ -39,7 +41,7 @@ struct AddGuestModal: View {
                         .textInputAutocapitalization(.never)
                         .keyboardType(.emailAddress)
                         .onSubmit {
-                            if isValidEmail(email: email) {
+                            if (isValidEmail(email: email) && email != currentEmail) {
                                 print("Email is valid")
                                 if (!tags.contains(email)) {
                                   tags.append(email)
@@ -53,7 +55,7 @@ struct AddGuestModal: View {
                 
                 
                 Divider()
-                    .frame(height: 1)                
+                    .frame(height: 1)
             }
             
             Text("The invitation can’t be sent if the email is not a registered account of Hangoutla.")
