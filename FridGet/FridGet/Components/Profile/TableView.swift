@@ -9,12 +9,12 @@ import SwiftUI
 
 struct TableView: View {
     var iconName: String? // sparkles, lock, trash
-    
     var text: String
+    
     var body: some View {
         HStack {           
             Group {
-                switch (iconName){
+                switch (iconName) {
                 case "sparkles":
                     Image(systemName: "sparkles")
                         .padding()

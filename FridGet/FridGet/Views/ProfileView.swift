@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ProfileView: View {
-    @State var isShowBondingModal: Bool = false
+    @State var isShowChangeNameModal: Bool = false
+    @State var isShowBondingPointsModal: Bool = false
     @State var isShowChangePasswordModal: Bool = false
     @State var isShowDeleteAccountAlert: Bool = false
     @State var isShowLogOutAlert: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -34,6 +36,14 @@ struct ProfileView: View {
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundColor(.blue)
+                    .onTapGesture {
+                        isShowChangeNameModal.toggle()
+                    }
+                    .sheet(isPresented: $isShowChangeNameModal) {
+                        NavigationView {
+                            ChangeNameModal()
+                        }
+                    }
             }
             .padding()
             
@@ -44,11 +54,27 @@ struct ProfileView: View {
             
             VStack {
                 TableView(iconName: "sparkles", text: "Bonding Points")
+                    .onTapGesture {
+                        isShowBondingPointsModal.toggle()
+                    }
+                    .sheet(isPresented: $isShowBondingPointsModal) {
+                        NavigationView {
+                            BondingPointsModal()
+                        }
+                    }
                 
                 Divider()
                     .padding(.leading, 72)
                 
                 TableView(iconName: "lock", text: "Change Password")
+                    .onTapGesture {
+                        isShowChangePasswordModal.toggle()
+                    }
+                    .sheet(isPresented: $isShowChangePasswordModal) {
+                        NavigationView {
+                            ChangePasswordModal()
+                        }
+                    }
                 
                 Divider()
                     .padding(.leading, 72)
@@ -68,6 +94,7 @@ struct ProfileView: View {
                         .foregroundColor(Color("secondaryGray"))
                 }
                 .padding(.horizontal)
+                .padding(.top, 6)
                 
             }
             
