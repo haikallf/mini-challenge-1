@@ -9,10 +9,11 @@ import SwiftUI
 
 struct InitialAvatar: View {
     var initial: String
+    var fontSize: CGFloat = 12
     
     var body: some View {
         Text(initial)
-            .font(.system(size: 12))
+            .font(.system(size: fontSize))
             .padding(.all, 10)
             .background(.gray)
             .foregroundColor(.white)
