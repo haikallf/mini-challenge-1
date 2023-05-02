@@ -10,7 +10,7 @@ import SwiftUI
 struct EventDetailView: View {
     var eventStatus: String = "accepted" // accepted, owner, pending
     var isHappening: Bool = true
-    var isArrived: Bool = true
+    var isArrived: Bool = false
     
     var body: some View {
         ScrollView {

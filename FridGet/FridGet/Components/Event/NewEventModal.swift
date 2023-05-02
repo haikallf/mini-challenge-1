@@ -26,18 +26,9 @@ struct NewEventModal: View {
                 Divider()
                 
                 VStack {
-                    
-                    
-        //            Button("Press to dismiss") {
-        //                dismiss()
-        //            }
-        //            .font(.title)
-        //            .padding()
-        //            .background(.black)
-                    
-                    
                     VStack(alignment: .leading) {
-                        TextInputField("Title", text: $eventTitle)
+                        TextField("Title", text: $eventTitle)
+                            .multilineTextAlignment(.leading)
                     }
                     .padding([.leading, .vertical])
                     .background(.white)
@@ -52,19 +43,21 @@ struct NewEventModal: View {
                         DatePicker("Time", selection: $eventTime, in: eventDate..., displayedComponents: .hourAndMinute)
                             .foregroundColor(.black)
                     }
-                    .padding([.leading, .vertical])
+                    .padding([.horizontal, .vertical])
                     .background(.white)
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        TextInputField("Location", text: $eventLocation)
+                        TextField("Location", text: $eventLocation)
+                            .multilineTextAlignment(.leading)
                     }
                     .padding([.leading, .vertical])
                     .background(.white)
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        TextInputField("Notes", text: $eventNotes)
+                        TextField("Notes", text: $eventNotes)
+                            .multilineTextAlignment(.leading)
                     }
                     .padding([.leading, .vertical])
                     .background(.white)

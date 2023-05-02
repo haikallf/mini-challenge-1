@@ -18,12 +18,29 @@ struct EventView: View {
     @Binding var isUserCurrentlyLoggedIn: Bool
     
     var body: some View {
+        HStack {
+            Text("Events")
+                .font(.system(size: 34))
+                .fontWeight(.bold)
+
+            Spacer()
+
+            Text("SJ")
+                .padding(.all, 10)
+                .background(.gray)
+                .foregroundColor(.white)
+                .cornerRadius(.infinity)
+        }
+        .padding(.top, 44)
+        .padding(.horizontal)
+        
         VStack(spacing: 16) {
             Picker("", selection: $isOngoing){
                 Text("History").tag(0)
                 Text("Ongoing").tag(1)
             }
             .pickerStyle(.segmented)
+            .padding(.horizontal)
             
             ZStack {
                 VStack {
@@ -41,14 +58,14 @@ struct EventView: View {
                             NoEvent(isOngoing: isOngoing)
                         }
                     } else {
-                        if (isPendingInvitation) {
-                            NavigationLink(destination: PendingInvitationView()) {
-                                HStack {
-                                    Text("Pending Invitation")
-                                        .font(.system(size: 16))
-                                    
-                                    Spacer()
-                                    
+                        NavigationLink(destination: PendingInvitationView()) {
+                            HStack {
+                                Text("Pending Invitation")
+                                    .font(.system(size: 16))
+                                
+                                Spacer()
+                                
+                                if (isPendingInvitation) {
                                     ZStack {
                                         Circle()
                                             .fill(.red)
@@ -58,31 +75,34 @@ struct EventView: View {
                                             .foregroundColor(.white)
                                             .font(.system(size: 13))
                                     }
-                                    
-                                    
                                 }
-                                .padding()
-                                .frame(maxWidth: .infinity)
-                                .foregroundColor(.black)
-                                .cornerRadius(8)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color("grayBg"), lineWidth: 1)
-                                )
                             }
+                            .padding()
+                            .frame(maxWidth: .infinity)
+                            .foregroundColor(.black)
+                            .cornerRadius(8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color("grayBg"), lineWidth: 1)
+                            )
+                            .padding(.horizontal)
                         }
+                        
                         
                         if (isAvailableOngoing) {
                             ScrollView {
                                 VStack(spacing: 12) {
                                     // arr.enumerated() idx, elmt in
                                     ForEach(1..<10) { idx in
-                                        EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
-                                        
-                                        if (idx != 9) {
-                                            Divider()
-                                                .frame(height: 1)
+                                        Group {
+                                            EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
+                                            
+                                            if (idx != 9) {
+                                                Divider()
+                                                    .frame(height: 1)
+                                            }
                                         }
+                                        .padding(.horizontal)
                                     }
                                 }
                             }
@@ -118,25 +138,6 @@ struct EventView: View {
             }
             
             Spacer()
-        }
-        .padding([.horizontal, .top])
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItemGroup(placement: .principal) {
-                HStack {
-                    Text("Events")
-                        .font(.system(size: 34))
-                        .fontWeight(.bold)
-
-                    Spacer()
-
-                    Text("SJ")
-                        .padding(.all, 10)
-                        .background(.gray)
-                        .foregroundColor(.white)
-                        .cornerRadius(.infinity)
-                }
-            }
         }
     }
 }
