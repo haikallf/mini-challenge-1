@@ -20,6 +20,9 @@
 		C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */ = {isa = PBXBuildFile; productRef = C53E14992A019D5E00D966BA /* WrapLayout */; };
 		C565AD202A01A62E00666057 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD1F2A01A62E00666057 /* ProfileView.swift */; };
 		C565AD252A01ACFF00666057 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD242A01ACFF00666057 /* TableView.swift */; };
+		C565AD272A01B5D300666057 /* ChangeNameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD262A01B5D300666057 /* ChangeNameModal.swift */; };
+		C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD282A01B6B300666057 /* BondingPointsModal.swift */; };
+		C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
@@ -53,6 +56,9 @@
 		C53E14962A01875600D966BA /* EmailTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTag.swift; sourceTree = "<group>"; };
 		C565AD1F2A01A62E00666057 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C565AD242A01ACFF00666057 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		C565AD262A01B5D300666057 /* ChangeNameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameModal.swift; sourceTree = "<group>"; };
+		C565AD282A01B6B300666057 /* BondingPointsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointsModal.swift; sourceTree = "<group>"; };
+		C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModal.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -128,6 +134,9 @@
 			isa = PBXGroup;
 			children = (
 				C565AD242A01ACFF00666057 /* TableView.swift */,
+				C565AD262A01B5D300666057 /* ChangeNameModal.swift */,
+				C565AD282A01B6B300666057 /* BondingPointsModal.swift */,
+				C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -295,6 +304,7 @@
 				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
 				C5A8681C29FDA3A000AC8103 /* InvitationCard.swift in Sources */,
+				C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */,
 				C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */,
 				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
@@ -304,6 +314,8 @@
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
+				C565AD272A01B5D300666057 /* ChangeNameModal.swift in Sources */,
+				C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
 				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,
