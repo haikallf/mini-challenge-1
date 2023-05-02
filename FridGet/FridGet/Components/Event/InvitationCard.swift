@@ -40,7 +40,7 @@ struct InvitationCard: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 28)
-                                .foregroundColor(Color("gray"))
+                                .foregroundColor(Color("lightRed"))
                         }
                         
                         Button(action: {}) {
@@ -48,7 +48,7 @@ struct InvitationCard: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                                 .frame(width: 28)
-                                .foregroundColor(Color("gray"))
+                                .foregroundColor(Color("lightGreen"))
                         }
                     }
                     

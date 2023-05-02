@@ -44,15 +44,22 @@ struct EventView: View {
                         if (isPendingInvitation) {
                             NavigationLink(destination: PendingInvitationView()) {
                                 HStack {
-                                    Image(systemName: "calendar")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width: 20)
-                                    
                                     Text("Pending Invitation")
                                         .font(.system(size: 16))
                                     
                                     Spacer()
+                                    
+                                    ZStack {
+                                        Circle()
+                                            .fill(.red)
+                                            .frame(maxWidth: 20, maxHeight: 20)
+                                        
+                                        Text("1")
+                                            .foregroundColor(.white)
+                                            .font(.system(size: 13))
+                                    }
+                                    
+                                    
                                 }
                                 .padding()
                                 .frame(maxWidth: .infinity)
@@ -66,14 +73,17 @@ struct EventView: View {
                         }
                         
                         if (isAvailableOngoing) {
-                            VStack(spacing: 24) {
-                                ScrollView {
-                                    EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
-                                    EventCard(eventName: "Ini nama eventnya")
-                                    EventCard(eventName: "Ini nama eventnya")
-                                    EventCard(eventName: "Ini nama eventnya")
-                                    EventCard(eventName: "Ini nama eventnya")
-                                    EventCard(eventName: "Ini nama eventnya")
+                            ScrollView {
+                                VStack(spacing: 12) {
+                                    // arr.enumerated() idx, elmt in
+                                    ForEach(1..<10) { idx in
+                                        EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
+                                        
+                                        if (idx != 9) {
+                                            Divider()
+                                                .frame(height: 1)
+                                        }
+                                    }
                                 }
                             }
                         } else {
