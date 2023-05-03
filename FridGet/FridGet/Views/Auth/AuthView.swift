@@ -44,7 +44,7 @@ struct AuthView: View {
                 
                 BorderedSecureInputField("Password", text: $password)
             }
-            CustomButton(text: isLogin ? "Log In" : "Create Account", action: {}, isBordered: false)
+            CustomButton(text: isLogin ? "Log In" : "Create Account", action: {}, isPrimary: true)
                 .padding(.top, 64)
             
             HStack {

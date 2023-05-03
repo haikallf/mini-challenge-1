@@ -9,8 +9,9 @@ import SwiftUI
 
 struct EventDetailView: View {
     var eventStatus: String = "accepted" // accepted, owner, pending
-    var isHappening: Bool = true
-    var isArrived: Bool = false
+    var isHappening: Bool = false
+    var isArrived: Bool = true
+    var isOver: Bool = true
     
     var body: some View {
         ScrollView {
@@ -36,74 +37,14 @@ struct EventDetailView: View {
                 } else {
                     if (isHappening) {
                         if (isArrived) {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(.white)
-                                    .shadow(color: Color.black.opacity(0.08), radius: 6)
-                                
-                                VStack(alignment: .leading, spacing: 8) {
-                                    HStack {
-                                        Image(systemName: "dot.radiowaves.left.and.right")
-                                        Text("Happening Now")
-                                        
-                                    }
-                                    .font(.system(size: 11))
-                                    .padding(5)
-                                    .foregroundColor(.white)
-                                    .background(.red)
-                                    .cornerRadius(1000)
-                                    
-                                    Text("Quality time mode")
-                                        .multilineTextAlignment(.leading)
-                                        .font(.system(size: 20))
-                                        .fontWeight(.semibold)
-                                    
-                                    Text("This is your chance to bond your friendship, have fun!")
-                                        .font(.system(size: 13))
-                                        
-                                }
-                                .padding(.vertical)
-                            }
-                            .padding(.horizontal, 10)
-                            
+                            QualityTimeCard()
                         } else {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 8)
-                                    .fill(.white)
-                                    .shadow(color: Color.black.opacity(0.08), radius: 6)
-                                
-                                VStack(alignment: .leading, spacing: 8) {
-                                    HStack {
-                                        Image(systemName: "dot.radiowaves.left.and.right")
-                                        Text("Happening Now")
-                                            
-                                    }
-                                    .font(.system(size: 11))
-                                    .padding(5)
-                                    .foregroundColor(.white)
-                                    .background(.red)
-                                    .cornerRadius(1000)
-                                    
-                                    Text("Have you arrived at the event location?")
-                                        .multilineTextAlignment(.leading)
-                                        .font(.system(size: 20))
-                                        .fontWeight(.semibold)
-                                    
-                                    Button(action: {}) {
-                                        Text("I'm here")
-                                            .padding()
-                                            .frame(maxWidth: .infinity)
-                                            .background(Color("lightBlue"))
-                                            .fontWeight(.semibold)
-                                            .cornerRadius(1000)
-                                    }
-                                    .padding(.top, 16)
-                                }
-                                .padding()
-                                
-                            }
-                            .padding(.horizontal, 10)
+                            ArrivedConfirmationCard(action: {})
                         }
+                    } else if (isOver) {
+                        EventOverCard()
+                        QualityTimeCard()
+                        ArrivedConfirmationCard(action: {})
                     }
                 }
             }

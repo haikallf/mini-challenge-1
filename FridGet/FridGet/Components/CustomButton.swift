@@ -10,22 +10,19 @@ import SwiftUI
 struct CustomButton: View {
     var text: String
     var action: () -> Void
-    var isBordered: Bool
+    var isPrimary: Bool
     var width: Double = .infinity
     
     var body: some View {
-        if (isBordered) {
+        if (!isPrimary) {
             Button(action: action) {
                 Text(text)
+                    .padding()
                     .frame(maxWidth: width)
                     .foregroundColor(.blue)
-                    .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(Color("lightBlue"), lineWidth: 2)
-                    )
+                    .fontWeight(.semibold)
             }
-            .background(Color("lightBlue"))
+            .background(.white)
             .cornerRadius(1000)
         } else {
             Button(action: action) {
@@ -44,6 +41,6 @@ struct CustomButton: View {
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton(text: "Button", action: { print("Button Clicked") }, isBordered: false)
+        CustomButton(text: "Button", action: { print("Button Clicked") }, isPrimary: true)
     }
 }

@@ -38,17 +38,7 @@ struct EventCard: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         if (isHappening) {
-                            HStack {
-                                Image(systemName: "dot.radiowaves.left.and.right")
-                                Text("Happening Now")
-                                    
-                            }
-                            .font(.system(size: 11))
-                            .padding(5)
-                            .foregroundColor(.white)
-                            .background(.red)
-                            .cornerRadius(1000)
-                            
+                            EventTag() 
                         } else {
                             Text("Thursday, 27 April 2023 16.00")
                                 .foregroundColor(Color("gray"))
