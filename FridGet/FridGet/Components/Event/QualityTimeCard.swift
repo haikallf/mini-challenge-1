@@ -9,16 +9,20 @@ import SwiftUI
 
 struct QualityTimeCard: View {
     var body: some View {
-        VStack(alignment: .leading, spacing: 8) {
-            EventTag()
+        HStack {
+            VStack(alignment: .leading, spacing: 8) {
+                EventTag()
+                
+                Text("Quality time mode")
+                    .multilineTextAlignment(.leading)
+                    .font(.headline)
+                    .fontWeight(.semibold)
+                
+                Text("This is your chance to bond your friendship, have fun!")
+                    .font(.footnote)
+            }
             
-            Text("Quality time mode")
-                .multilineTextAlignment(.leading)
-                .font(.headline)
-                .fontWeight(.semibold)
-            
-            Text("This is your chance to bond your friendship, have fun!")
-                .font(.footnote)
+            Spacer()
         }
         .padding()
         .frame(maxWidth: .infinity)

@@ -1,21 +1,21 @@
 //
-//  NewEventModal.swift
+//  EditEventModal.swift
 //  FridGet
 //
-//  Created by Haikal Lazuardi on 30/04/23.
+//  Created by Haikal Lazuardi Fadil on 03/05/23.
 //
 
 import SwiftUI
 
-struct NewEventModal: View {
+struct EditEventModal: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var eventTitle: String = ""
+    @State var eventTitle: String = "Mini Challenge 1"
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
-    @State var eventLocation: String = ""
+    @State var eventLocation: String = "The Breeze"
     @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
-    @State var eventNotes: String = ""
+    @State var eventNotes: String = "Jangan lupa bawa laptop"
     
     @State var isShowCancelAlert: Bool = false
     @State var isShowAddGuestModal: Bool = false
@@ -26,7 +26,7 @@ struct NewEventModal: View {
     func isFormValid() -> Bool {
         return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && eventLocation != "" && !eventGuests.isEmpty && eventNotes != "")
     }
-    
+
     var body: some View {
         ZStack {
             Color("secondaryBg")
@@ -103,7 +103,7 @@ struct NewEventModal: View {
                     .cornerRadius(8)
                     
                 }
-                .alert("Are you sure you want to discard this new event?", isPresented: $isShowCancelAlert) {
+                .alert("Are you sure you want to discard this changes?", isPresented: $isShowCancelAlert) {
                     Button("Discard Changes", role: .destructive, action: {
                         dismiss()
                     })
@@ -116,24 +116,26 @@ struct NewEventModal: View {
                         Text("Cancel")
                             .font(.system(size: 17))
                             .fontWeight(.regular)
+                            .foregroundColor(.blue)
                             .onTapGesture {
                                 isShowCancelAlert = true
                             }
                     }
                     
                     ToolbarItem(placement: .principal) {
-                        Text("New Event")
+                        Text("Edit Event")
                             .font(.system(size: 17))
                             .fontWeight(.semibold)
                             .foregroundColor(.black)
                     }
                     
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Text("Create")
+                        Text("Done")
                             .font(.system(size: 17))
                             .fontWeight(.regular)
                             .foregroundColor(isFormValid() ? .blue : Color("gray"))
                             .onTapGesture {
+                                print(eventDate)
                                 dismiss()
                             }
                             .disabled(!isFormValid())
@@ -147,8 +149,8 @@ struct NewEventModal: View {
     }
 }
 
-struct NewEventModal_Previews: PreviewProvider {
+struct EditEventModal_Previews: PreviewProvider {
     static var previews: some View {
-        NewEventModal()
+        EditEventModal()
     }
 }

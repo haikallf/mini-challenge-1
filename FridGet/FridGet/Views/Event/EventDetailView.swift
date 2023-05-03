@@ -14,6 +14,7 @@ struct EventDetailView: View {
     var isOver: Bool = true
     
     @State var isShowDeleteEventAlert: Bool = false
+    @State var isShowEditEventAlert: Bool = false
     
     var body: some View {
         ScrollView {
@@ -46,8 +47,8 @@ struct EventDetailView: View {
                             }
                         } else if (isOver) {
                             EventOverCard()
-                            QualityTimeCard()
-                            ArrivedConfirmationCard(action: {})
+//                            QualityTimeCard()
+//                            ArrivedConfirmationCard(action: {})
                         }
                     }
                 }
@@ -121,6 +122,15 @@ struct EventDetailView: View {
                     
                     Spacer()
                 }
+                
+                Button(action: {
+                    isShowDeleteEventAlert = true
+                }) {
+                    Text("Delete Event")
+                        .fontWeight(.semibold)
+                        .foregroundColor(Color("lightRed"))
+                }
+                .padding()
 
                 Spacer()
             }
@@ -136,10 +146,15 @@ struct EventDetailView: View {
                 if (eventStatus == "owner") {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Button(action: {
-                            isShowDeleteEventAlert = true
+                            isShowEditEventAlert.toggle()
                         }) {
                             Text("Edit")
                                 .foregroundColor(.blue)
+                        }
+                        .sheet(isPresented: $isShowEditEventAlert) {
+                            NavigationView {
+                                EditEventModal()
+                            }
                         }
                     }
                 }
