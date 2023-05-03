@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct EventDetailView: View {
-    var eventStatus: String = "accepted" // accepted, owner, pending
+    var eventStatus: String = "owner" // accepted, owner, pending
     var isHappening: Bool = false
     var isArrived: Bool = true
     var isOver: Bool = true
+    
+    @State var isShowDeleteEventAlert: Bool = false
     
     var body: some View {
         ScrollView {
@@ -133,14 +135,28 @@ struct EventDetailView: View {
                 
                 if (eventStatus == "owner") {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {}) {
+                        Button(action: {
+                            isShowDeleteEventAlert = true
+                        }) {
                             Text("Edit")
                                 .foregroundColor(.blue)
                         }
                     }
                 }
+            }
+            .alert("Delete Invitation", isPresented: $isShowDeleteEventAlert, actions: {
+                Button("Cancel", role: .cancel, action: {
+                    isShowDeleteEventAlert = false
+                })
                 
-        }
+                Button("Delete", role: .destructive, action: {})
+                
+            }, message: {
+                Text("Are you sure you want to delete ")
+                + Text("Mini Challenge 1")
+                    .bold()
+                + Text(" event?")
+            })
         }
     }
 }
