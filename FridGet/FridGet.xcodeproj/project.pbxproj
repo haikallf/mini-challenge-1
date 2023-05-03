@@ -23,6 +23,7 @@
 		C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD262A01B5D300666057 /* EditNameModal.swift */; };
 		C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD282A01B6B300666057 /* BondingPointsModal.swift */; };
 		C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */; };
+		C5A07F152A01F25E00CF7FE2 /* BondingPointCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
@@ -59,6 +60,7 @@
 		C565AD262A01B5D300666057 /* EditNameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameModal.swift; sourceTree = "<group>"; };
 		C565AD282A01B6B300666057 /* BondingPointsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointsModal.swift; sourceTree = "<group>"; };
 		C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModal.swift; sourceTree = "<group>"; };
+		C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointCard.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				C565AD262A01B5D300666057 /* EditNameModal.swift */,
 				C565AD282A01B6B300666057 /* BondingPointsModal.swift */,
 				C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */,
+				C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
 				C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */,
+				C5A07F152A01F25E00CF7FE2 /* BondingPointCard.swift in Sources */,
 				C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
 				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
