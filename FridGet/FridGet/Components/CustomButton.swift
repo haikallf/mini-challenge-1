@@ -12,21 +12,20 @@ struct CustomButton: View {
     var action: () -> Void
     var isBordered: Bool
     var width: Double = .infinity
-    var color: Color = .black
     
     var body: some View {
         if (isBordered) {
             Button(action: action) {
                 Text(text)
                     .frame(maxWidth: width)
-                    .foregroundColor(color)
+                    .foregroundColor(.blue)
                     .padding()
                     .overlay(
                         RoundedRectangle(cornerRadius: 10)
-                            .stroke(color, lineWidth: 2)
+                            .stroke(Color("lightBlue"), lineWidth: 2)
                     )
             }
-            .background(.white)
+            .background(Color("lightBlue"))
             .cornerRadius(1000)
         } else {
             Button(action: action) {
@@ -37,7 +36,7 @@ struct CustomButton: View {
                     .foregroundColor(.white)
                     .padding()
             }
-            .background(color)
+            .background(.blue)
             .cornerRadius(1000)
         }
     }
