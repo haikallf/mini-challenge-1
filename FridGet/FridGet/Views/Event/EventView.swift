@@ -85,7 +85,7 @@ struct EventView: View {
                             )
                             .padding(.horizontal)
                         }
-                        
+                        .padding(.vertical, 10)
                         
                         if (isAvailableOngoing) {
                             ScrollView {

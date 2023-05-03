@@ -116,6 +116,7 @@ struct NewEventModal: View {
                         Text("Cancel")
                             .font(.system(size: 17))
                             .fontWeight(.regular)
+                            .foregroundColor(.blue)
                             .onTapGesture {
                                 isShowCancelAlert = true
                             }
