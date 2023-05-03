@@ -42,7 +42,7 @@ struct AuthView: View {
 
                 TextInputField("example@email.com", text: $email)
                 
-                SecureInputField("Password", text: $password)
+                BorderedSecureInputField("Password", text: $password)
             }
             CustomButton(text: isLogin ? "Log In" : "Create Account", action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }, isBordered: false)
                 .padding(.top, 64)

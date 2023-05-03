@@ -10,9 +10,45 @@ import SwiftUI
 struct ChangePasswordModal: View {
     @Environment(\.dismiss) var dismiss
     
+    @State var currentPassword: String = ""
+    @State var newPassword: String = ""
+    @State var confirmNewPasssword: String = ""
+    
+    var userPassword: String = "pass123"
+    
+    func isAbleToChangePassword() -> Bool {
+        return (currentPassword == userPassword && newPassword == confirmNewPasssword && userPassword != newPassword && currentPassword != "" && newPassword != "" && confirmNewPasssword != "")
+    }
+    
     var body: some View {
-        VStack {
-            Text("Change Password")
+        ZStack {
+            Color("grayBg")
+                .ignoresSafeArea()
+            
+            VStack(alignment: .leading) {
+                SecureInputField("Current password", text: $currentPassword)
+                    .padding(.leading)
+                    .padding(.vertical, 11)
+                    .background(.white)
+                    .cornerRadius(8)
+                    .multilineTextAlignment(.leading)
+                
+                VStack {
+                    SecureInputField("New password", text: $newPassword)
+                    
+                    Divider()
+                    
+                    SecureInputField("Confirm pew password", text: $confirmNewPasssword)
+                }
+                .padding(.leading)
+                .padding(.vertical, 11)
+                .background(.white)
+                .cornerRadius(8)
+                .multilineTextAlignment(.leading)
+                
+                Spacer()
+            }
+            .padding()
         }
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -20,6 +56,7 @@ struct ChangePasswordModal: View {
                 Text("Cancel")
                     .font(.system(size: 17))
                     .fontWeight(.regular)
+                    .foregroundColor(.blue)
                     .onTapGesture {
                         dismiss()
                     }
@@ -36,9 +73,11 @@ struct ChangePasswordModal: View {
                 Text("Done")
                     .font(.system(size: 17))
                     .fontWeight(.regular)
+                    .foregroundColor(isAbleToChangePassword() ? .blue : Color("gray"))
                     .onTapGesture {
                         dismiss()
                     }
+                    .disabled(!isAbleToChangePassword())
             }
         }
 
