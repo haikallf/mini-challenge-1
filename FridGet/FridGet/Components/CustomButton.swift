@@ -10,21 +10,17 @@ import SwiftUI
 struct CustomButton: View {
     var text: String
     var action: () -> Void
-    var isBordered: Bool
+    var isPrimary: Bool
     var width: Double = .infinity
-    var color: Color = .black
     
     var body: some View {
-        if (isBordered) {
+        if (!isPrimary) {
             Button(action: action) {
                 Text(text)
-                    .frame(maxWidth: width)
-                    .foregroundColor(color)
                     .padding()
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 10)
-                            .stroke(color, lineWidth: 2)
-                    )
+                    .frame(maxWidth: width)
+                    .foregroundColor(.blue)
+                    .fontWeight(.semibold)
             }
             .background(.white)
             .cornerRadius(1000)
@@ -37,7 +33,7 @@ struct CustomButton: View {
                     .foregroundColor(.white)
                     .padding()
             }
-            .background(color)
+            .background(.blue)
             .cornerRadius(1000)
         }
     }
@@ -45,6 +41,6 @@ struct CustomButton: View {
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton(text: "Button", action: { print("Button Clicked") }, isBordered: false)
+        CustomButton(text: "Button", action: { print("Button Clicked") }, isPrimary: true)
     }
 }

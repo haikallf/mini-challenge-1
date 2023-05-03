@@ -18,6 +18,17 @@
 		C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14942A017DE500D966BA /* AddGuestModal.swift */; };
 		C53E14972A01875600D966BA /* EmailTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C53E14962A01875600D966BA /* EmailTag.swift */; };
 		C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */ = {isa = PBXBuildFile; productRef = C53E14992A019D5E00D966BA /* WrapLayout */; };
+		C565AD202A01A62E00666057 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD1F2A01A62E00666057 /* ProfileView.swift */; };
+		C565AD252A01ACFF00666057 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD242A01ACFF00666057 /* TableView.swift */; };
+		C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD262A01B5D300666057 /* EditNameModal.swift */; };
+		C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD282A01B6B300666057 /* BondingPointsModal.swift */; };
+		C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */; };
+		C5A07F152A01F25E00CF7FE2 /* BondingPointCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */; };
+		C5A07F172A02016E00CF7FE2 /* SecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F162A02016E00CF7FE2 /* SecureInputField.swift */; };
+		C5A07F192A020E1500CF7FE2 /* ArrivedConfirmationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F182A020E1500CF7FE2 /* ArrivedConfirmationCard.swift */; };
+		C5A07F1B2A020FFE00CF7FE2 /* QualityTimeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F1A2A020FFE00CF7FE2 /* QualityTimeCard.swift */; };
+		C5A07F1D2A02117500CF7FE2 /* EventOverCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F1C2A02117500CF7FE2 /* EventOverCard.swift */; };
+		C5A07F1F2A0213CB00CF7FE2 /* EventTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A07F1E2A0213CB00CF7FE2 /* EventTag.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
 		C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */; };
 		C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */; };
@@ -33,7 +44,7 @@
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
-		DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* SecureInputField.swift */; };
+		DE62179529EB1A2000B69181 /* BorderedSecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* BorderedSecureInputField.swift */; };
 		DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179629FBDD5B00B69181 /* NavigationButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +60,17 @@
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C53E14942A017DE500D966BA /* AddGuestModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGuestModal.swift; sourceTree = "<group>"; };
 		C53E14962A01875600D966BA /* EmailTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTag.swift; sourceTree = "<group>"; };
+		C565AD1F2A01A62E00666057 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		C565AD242A01ACFF00666057 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		C565AD262A01B5D300666057 /* EditNameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameModal.swift; sourceTree = "<group>"; };
+		C565AD282A01B6B300666057 /* BondingPointsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointsModal.swift; sourceTree = "<group>"; };
+		C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModal.swift; sourceTree = "<group>"; };
+		C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointCard.swift; sourceTree = "<group>"; };
+		C5A07F162A02016E00CF7FE2 /* SecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputField.swift; sourceTree = "<group>"; };
+		C5A07F182A020E1500CF7FE2 /* ArrivedConfirmationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivedConfirmationCard.swift; sourceTree = "<group>"; };
+		C5A07F1A2A020FFE00CF7FE2 /* QualityTimeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QualityTimeCard.swift; sourceTree = "<group>"; };
+		C5A07F1C2A02117500CF7FE2 /* EventOverCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOverCard.swift; sourceTree = "<group>"; };
+		C5A07F1E2A0213CB00CF7FE2 /* EventTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTag.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
 		C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingInvitationView.swift; sourceTree = "<group>"; };
 		C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailView.swift; sourceTree = "<group>"; };
@@ -64,7 +86,7 @@
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
-		DE62179429EB1A2000B69181 /* SecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureInputField.swift; sourceTree = "<group>"; };
+		DE62179429EB1A2000B69181 /* BorderedSecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedSecureInputField.swift; sourceTree = "<group>"; };
 		DE62179629FBDD5B00B69181 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -120,6 +142,18 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		C565AD212A01ACC500666057 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				C565AD242A01ACFF00666057 /* TableView.swift */,
+				C565AD262A01B5D300666057 /* EditNameModal.swift */,
+				C565AD282A01B6B300666057 /* BondingPointsModal.swift */,
+				C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */,
+				C5A07F142A01F25E00CF7FE2 /* BondingPointCard.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		C5A524E329FDA8A3007B08C7 /* Event */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +164,10 @@
 				C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */,
 				C53E14942A017DE500D966BA /* AddGuestModal.swift */,
 				C53E14962A01875600D966BA /* EmailTag.swift */,
+				C5A07F182A020E1500CF7FE2 /* ArrivedConfirmationCard.swift */,
+				C5A07F1A2A020FFE00CF7FE2 /* QualityTimeCard.swift */,
+				C5A07F1C2A02117500CF7FE2 /* EventOverCard.swift */,
+				C5A07F1E2A0213CB00CF7FE2 /* EventTag.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -176,6 +214,7 @@
 				C5B2F6A329FC60CD00D16C62 /* Event */,
 				C5B2F69829FC543100D16C62 /* Auth */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
+				C565AD1F2A01A62E00666057 /* ProfileView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -183,10 +222,12 @@
 		DE62179329EB19F500B69181 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				C565AD212A01ACC500666057 /* Profile */,
 				C5A524E429FDA8BB007B08C7 /* Auth */,
 				C5A524E329FDA8A3007B08C7 /* Event */,
 				C5A8681D29FDA57B00AC8103 /* InitialAvatar.swift */,
-				DE62179429EB1A2000B69181 /* SecureInputField.swift */,
+				DE62179429EB1A2000B69181 /* BorderedSecureInputField.swift */,
+				C5A07F162A02016E00CF7FE2 /* SecureInputField.swift */,
 				C5366E2D29EB1CC400FC77FB /* TextInputField.swift */,
 				C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */,
 				DE62179629FBDD5B00B69181 /* NavigationButton.swift */,
@@ -272,22 +313,33 @@
 			files = (
 				C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */,
 				C5A8681E29FDA57B00AC8103 /* InitialAvatar.swift in Sources */,
+				C5A07F192A020E1500CF7FE2 /* ArrivedConfirmationCard.swift in Sources */,
 				C53E14972A01875600D966BA /* EmailTag.swift in Sources */,
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
+				C565AD252A01ACFF00666057 /* TableView.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				C53E14952A017DE500D966BA /* AddGuestModal.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
-				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
+				DE62179529EB1A2000B69181 /* BorderedSecureInputField.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
+				C5A07F1F2A0213CB00CF7FE2 /* EventTag.swift in Sources */,
 				C5A8681C29FDA3A000AC8103 /* InvitationCard.swift in Sources */,
+				C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */,
+				C5A07F1D2A02117500CF7FE2 /* EventOverCard.swift in Sources */,
+				C5A07F172A02016E00CF7FE2 /* SecureInputField.swift in Sources */,
 				C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */,
 				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				C565AD202A01A62E00666057 /* ProfileView.swift in Sources */,
 				C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */,
+				C5A07F1B2A020FFE00CF7FE2 /* QualityTimeCard.swift in Sources */,
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
+				C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */,
+				C5A07F152A01F25E00CF7FE2 /* BondingPointCard.swift in Sources */,
+				C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
 				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
 				71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */,

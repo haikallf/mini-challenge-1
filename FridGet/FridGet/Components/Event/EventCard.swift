@@ -13,6 +13,8 @@ struct EventCard: View {
     var isOwner: Bool = false
     var isHappening: Bool = false
     
+    @State var isShowRejectAlert: Bool = false
+    
     var body: some View {
         NavigationLink(destination: EventDetailView()) {
             HStack {
@@ -38,17 +40,7 @@ struct EventCard: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         if (isHappening) {
-                            HStack {
-                                Image(systemName: "dot.radiowaves.left.and.right")
-                                Text("Happening Now")
-                                    
-                            }
-                            .font(.system(size: 11))
-                            .padding(5)
-                            .foregroundColor(.white)
-                            .background(.red)
-                            .cornerRadius(1000)
-                            
+                            EventTag() 
                         } else {
                             Text("Thursday, 27 April 2023 16.00")
                                 .foregroundColor(Color("gray"))
@@ -84,7 +76,9 @@ struct EventCard: View {
                             Spacer()
                             
                             HStack {
-                                Button(action: {}) {
+                                Button(action: {
+                                    isShowRejectAlert = true
+                                }) {
                                     Image(systemName: "xmark.circle.fill")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -107,6 +101,19 @@ struct EventCard: View {
                 }
             }
             .frame(maxHeight: 80)
+            .alert("Reject Invitation", isPresented: $isShowRejectAlert, actions: {
+                Button("Cancel", role: .cancel, action: {
+                    isShowRejectAlert = false
+                })
+                
+                Button("Reject", role: .destructive, action: {})
+                
+            }, message: {
+                Text("Are you sure you want to reject invitation for ")
+                + Text("Mini Challenge 1")
+                    .bold()
+                + Text(" event?")
+            })
         }
     }
 }
