@@ -41,6 +41,10 @@
 		C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A129FC5F5C00D16C62 /* EventView.swift */; };
 		C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A429FC611400D16C62 /* NoEvent.swift */; };
 		C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B2F6A629FC677900D16C62 /* EventCard.swift */; };
+		C5B400532A02BD6300148342 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B400522A02BD6300148342 /* MapView.swift */; };
+		C5B400562A02C8B000148342 /* EventMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B400552A02C8B000148342 /* EventMapView.swift */; };
+		C5B400592A02C96C00148342 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B400582A02C96C00148342 /* MapViewModel.swift */; };
+		C5B4005D2A02DE9A00148342 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B4005C2A02DE9A00148342 /* Place.swift */; };
 		DE62178929EAFE1900B69181 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178829EAFE1900B69181 /* AuthView.swift */; };
 		DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62178D29EB0CF000B69181 /* ContentView.swift */; };
 		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
@@ -84,6 +88,10 @@
 		C5B2F6A129FC5F5C00D16C62 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		C5B2F6A429FC611400D16C62 /* NoEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoEvent.swift; sourceTree = "<group>"; };
 		C5B2F6A629FC677900D16C62 /* EventCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCard.swift; sourceTree = "<group>"; };
+		C5B400522A02BD6300148342 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		C5B400552A02C8B000148342 /* EventMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventMapView.swift; sourceTree = "<group>"; };
+		C5B400582A02C96C00148342 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		C5B4005C2A02DE9A00148342 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		DE62178829EAFE1900B69181 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
 		DE62178D29EB0CF000B69181 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
@@ -123,6 +131,7 @@
 		71A7ED9F29E9459E0082E1C9 /* FridGet */ = {
 			isa = PBXGroup;
 			children = (
+				C5B400572A02C95B00148342 /* ViewModel */,
 				C5B2F69729FC540200D16C62 /* Model */,
 				DE62179329EB19F500B69181 /* Components */,
 				DE62178A29EAFE6400B69181 /* Views */,
@@ -188,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */,
+				C5B4005C2A02DE9A00148342 /* Place.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -211,9 +221,27 @@
 			path = Event;
 			sourceTree = "<group>";
 		};
+		C5B400542A02C89400148342 /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				C5B400522A02BD6300148342 /* MapView.swift */,
+				C5B400552A02C8B000148342 /* EventMapView.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
+		C5B400572A02C95B00148342 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5B400582A02C96C00148342 /* MapViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		DE62178A29EAFE6400B69181 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C5B400542A02C89400148342 /* Map */,
 				C5B2F6A329FC60CD00D16C62 /* Event */,
 				C5B2F69829FC543100D16C62 /* Auth */,
 				71A7EDA229E9459E0082E1C9 /* CoreDataTemplateView.swift */,
@@ -326,9 +354,11 @@
 				DE62179529EB1A2000B69181 /* BorderedSecureInputField.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
 				C5A07F1F2A0213CB00CF7FE2 /* EventTag.swift in Sources */,
+				C5B400562A02C8B000148342 /* EventMapView.swift in Sources */,
 				C5A8681C29FDA3A000AC8103 /* InvitationCard.swift in Sources */,
 				C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */,
 				C5A07F1D2A02117500CF7FE2 /* EventOverCard.swift in Sources */,
+				C5B400532A02BD6300148342 /* MapView.swift in Sources */,
 				C5A07F172A02016E00CF7FE2 /* SecureInputField.swift in Sources */,
 				C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */,
 				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
@@ -341,8 +371,10 @@
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
+				C5B4005D2A02DE9A00148342 /* Place.swift in Sources */,
 				C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */,
 				C5A07F152A01F25E00CF7FE2 /* BondingPointCard.swift in Sources */,
+				C5B400592A02C96C00148342 /* MapViewModel.swift in Sources */,
 				C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
 				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
@@ -482,6 +514,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -511,6 +544,7 @@
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

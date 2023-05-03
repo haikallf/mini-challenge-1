@@ -13,11 +13,12 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                if self.isUserCurrentlyLoggedIn {
-                    EventView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
-                } else {
-                    PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
-                }
+//                if self.isUserCurrentlyLoggedIn {
+//                    EventView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
+//                } else {
+//                    PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
+//                }
+                EventMapView()
             }
         }
     }
