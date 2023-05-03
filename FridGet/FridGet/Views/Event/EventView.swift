@@ -93,7 +93,7 @@ struct EventView: View {
                                     // ForEach(arr.enumerated()) { idx, elmt in
                                     ForEach(1..<10) { idx in
                                         Group {
-                                            EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
+                                            EventCard(eventName: "Mini Challenge 1")
                                             
                                             if (idx != 9) { // last idx or arr.count == 1
                                                 Divider()

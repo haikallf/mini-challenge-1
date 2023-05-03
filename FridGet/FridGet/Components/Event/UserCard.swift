@@ -9,7 +9,9 @@ import SwiftUI
 
 struct UserCard: View {
     var status: String // accepted, rejected, pending, organizer
+    var isOwner: Bool = true
     var isArrived: Bool = false
+    
     var body: some View {
         HStack {
             InitialAvatar(initial: "HA")
@@ -52,6 +54,13 @@ struct UserCard: View {
                     .foregroundColor(.white)
                     .background(Color("green"))
                     .cornerRadius(1000)
+            } else if (status == "pending" && isOwner) {
+                Image(systemName: "xmark")
+                    .font(.callout)
+                    .foregroundColor(Color("secondaryGray"))
+                    .onTapGesture {
+                        print("Delete user")
+                    }
             }
         }
     }
