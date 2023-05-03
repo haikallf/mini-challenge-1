@@ -44,7 +44,7 @@ struct ProfileView: View {
                     }
                     .sheet(isPresented: $isShowChangeNameModal) {
                         NavigationView {
-                            ChangeNameModal()
+                            EditNameModal()
                         }
                     }
             }
