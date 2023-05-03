@@ -38,6 +38,7 @@ struct EditNameModal: View {
             }
             .padding()
         }
+        .interactiveDismissDisabled(true)
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {

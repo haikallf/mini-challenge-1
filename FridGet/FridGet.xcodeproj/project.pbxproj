@@ -46,6 +46,7 @@
 		DE62179229EB116500B69181 /* PreAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179129EB116500B69181 /* PreAuthView.swift */; };
 		DE62179529EB1A2000B69181 /* BorderedSecureInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179429EB1A2000B69181 /* BorderedSecureInputField.swift */; };
 		DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE62179629FBDD5B00B69181 /* NavigationButton.swift */; };
+		DE6217992A025F8D00B69181 /* EditEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE6217982A025F8D00B69181 /* EditEventModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		DE62179129EB116500B69181 /* PreAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreAuthView.swift; sourceTree = "<group>"; };
 		DE62179429EB1A2000B69181 /* BorderedSecureInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderedSecureInputField.swift; sourceTree = "<group>"; };
 		DE62179629FBDD5B00B69181 /* NavigationButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationButton.swift; sourceTree = "<group>"; };
+		DE6217982A025F8D00B69181 /* EditEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditEventModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				C5B2F6A629FC677900D16C62 /* EventCard.swift */,
 				C5B2F6A429FC611400D16C62 /* NoEvent.swift */,
 				C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */,
+				DE6217982A025F8D00B69181 /* EditEventModal.swift */,
 				C53E14942A017DE500D966BA /* AddGuestModal.swift */,
 				C53E14962A01875600D966BA /* EmailTag.swift */,
 				C5A07F182A020E1500CF7FE2 /* ArrivedConfirmationCard.swift */,
@@ -332,6 +335,7 @@
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
 				C565AD202A01A62E00666057 /* ProfileView.swift in Sources */,
+				DE6217992A025F8D00B69181 /* EditEventModal.swift in Sources */,
 				C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */,
 				C5A07F1B2A020FFE00CF7FE2 /* QualityTimeCard.swift in Sources */,
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,

@@ -61,7 +61,7 @@ struct BondingPointsModal: View {
                 }
             }
         }
-
+        .interactiveDismissDisabled(true)
     }
 }
 
