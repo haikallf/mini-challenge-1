@@ -38,7 +38,7 @@ struct UserCard: View {
                 default:
                     Text("Pending invitation")
                         .font(.system(size: 12))
-                        .foregroundColor(Color("yellow"))
+                        .foregroundColor(Color("brown"))
                 }
             }
             

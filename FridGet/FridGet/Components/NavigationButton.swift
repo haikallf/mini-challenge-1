@@ -20,7 +20,7 @@ struct NavigationButton<Destination: View>: View {
                     Text(text)
                         .fontWeight(.semibold)
                         .frame(maxWidth: maxWidth)
-                        .foregroundColor(.primary)
+                        .foregroundColor(.blue)
                         .padding()
                         .overlay(
                             RoundedRectangle(cornerRadius: 1000)
@@ -28,7 +28,7 @@ struct NavigationButton<Destination: View>: View {
                         )
                     
                 }
-                .background(Color("grayBg"))
+                .background(Color("lightBlue"))
                 .cornerRadius(1000)
             } else {
                 NavigationLink(destination: destination) {
@@ -39,7 +39,7 @@ struct NavigationButton<Destination: View>: View {
                         .foregroundColor(.white)
                         .padding()
                 }
-                .background(.primary)
+                .background(.blue)
                 .cornerRadius(1000)
                 
             }

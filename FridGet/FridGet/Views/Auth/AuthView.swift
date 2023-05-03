@@ -42,9 +42,9 @@ struct AuthView: View {
 
                 TextInputField("example@email.com", text: $email)
                 
-                SecureInputField("Password", text: $password)
+                BorderedSecureInputField("Password", text: $password)
             }
-            CustomButton(text: isLogin ? "Log In" : "Create Account", action: { print(isLogin ? "Login Button Clicker" : "Register Button Clicked") }, isBordered: false)
+            CustomButton(text: isLogin ? "Log In" : "Create Account", action: {}, isPrimary: true)
                 .padding(.top, 64)
             
             HStack {

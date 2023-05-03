@@ -1,13 +1,13 @@
 //
-//  SecureInputField.swift
+//  BorderedSecureInputField.swift
 //  FridGet
 //
-//  Created by Haikal Lazuardi on 03/05/23.
+//  Created by Haikal Lazuardi Fadil on 16/04/23.
 //
 
 import SwiftUI
 
-struct SecureInputField: View {
+struct BorderedSecureInputField: View {
     @Binding private var text: String
     @State private var isSecured: Bool = true
     private var title: String
@@ -39,12 +39,16 @@ struct SecureInputField: View {
                         .padding(.trailing)
                 }
             }
+            
+            Divider()
+             .frame(height: 1)
+             .padding(.horizontal, 30)
+             .background(Color("secondaryGray"))
         }
     }
 }
-
-struct SecureInputField_Previews: PreviewProvider {
+struct BorderedSecureInputField_Previews: PreviewProvider {
     static var previews: some View {
-        SecureInputField("Password", text: .constant(""))
+        BorderedSecureInputField("Password", text: .constant(""))
     }
 }
