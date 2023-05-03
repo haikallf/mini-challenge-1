@@ -15,6 +15,45 @@ struct AuthView: View {
     @State var password: String = ""
     @State var fullname: String = ""
     
+    @State var errorsList: [String] = []
+    
+    var wrongPasswordLogin: Bool = true
+    
+    func authValidation() {
+        if (!isValidEmail(email: email)) {
+            errorsList.append("Email format is invalid")
+        }
+        
+        if (isLogin) {
+            if (wrongPasswordLogin) {
+                errorsList.append("Incorrect email or password")
+            }
+            
+            if (email == "" || password == "") {
+                errorsList.append("Please fill all fields")
+            }
+        } else {
+            if (!isValidPassword(password: password)) {
+                errorsList.append("Password must contain minimum 8 characters at least 1 alphabet and 1 number")
+            }
+            
+            if (email == "" || password == "" || fullname == "") {
+                errorsList.append("Please fill all fields")
+            }
+        }
+    }
+    
+    func isValidEmail(email: String) -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
+    func isValidPassword(password: String) -> Bool {
+        let passwordRegex = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$"
+        return NSPredicate(format: "SELF MATCHES %@", passwordRegex).evaluate(with: password)
+    }
+    
+    
     var body: some View {
         VStack {
             Spacer()
@@ -41,10 +80,29 @@ struct AuthView: View {
                 }
 
                 TextInputField("example@email.com", text: $email)
+                    .keyboardType(.emailAddress)
                 
                 BorderedSecureInputField("Password", text: $password)
             }
-            CustomButton(text: isLogin ? "Log In" : "Create Account", action: {}, isPrimary: true)
+            
+            ForEach(errorsList, id: \.self) { err in
+                
+                HStack {
+                    Image(systemName: "xmark.circle.fill")
+                    
+                    Text(err)
+                    
+                    Spacer()
+                }
+                .foregroundColor(Color("lightRed"))
+                .font(.footnote)
+                
+            }
+            
+            CustomButton(text: isLogin ? "Log In" : "Create Account", action: {
+                errorsList.removeAll()
+                authValidation()
+            }, isPrimary: true)
                 .padding(.top, 64)
             
             HStack {
