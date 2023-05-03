@@ -68,8 +68,6 @@ struct AddGuestModal: View {
             .foregroundColor(Color("secondaryGray"))
             .multilineTextAlignment(.leading)
             
-                
-            
             WrapLayout {
                 ForEach(tags, id: \.self) { tag in
                     EmailTag(email: tag, action: {
@@ -89,6 +87,7 @@ struct AddGuestModal: View {
                 Text("Cancel")
                     .font(.system(size: 17))
                     .fontWeight(.regular)
+                    .foregroundColor(.blue)
                     .onTapGesture {
                         dismiss()
                     }
@@ -105,6 +104,7 @@ struct AddGuestModal: View {
                 Text("Done")
                     .font(.system(size: 17))
                     .fontWeight(.regular)
+                    .foregroundColor(.blue)
                     .onTapGesture {
                         emails = tags
                         dismiss()
