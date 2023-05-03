@@ -95,9 +95,10 @@ struct EventView: View {
                                         Group {
                                             EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
                                             
-                                            if (idx != 9) {
+                                            if (idx != 9) { // last idx or arr.count == 1
                                                 Divider()
                                                     .frame(height: 1)
+                                                    .padding(.leading, 12)
                                             }
                                         }
                                         .padding(.horizontal)
