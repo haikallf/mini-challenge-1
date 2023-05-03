@@ -20,7 +20,7 @@
 		C53E149A2A019D5E00D966BA /* WrapLayout in Frameworks */ = {isa = PBXBuildFile; productRef = C53E14992A019D5E00D966BA /* WrapLayout */; };
 		C565AD202A01A62E00666057 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD1F2A01A62E00666057 /* ProfileView.swift */; };
 		C565AD252A01ACFF00666057 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD242A01ACFF00666057 /* TableView.swift */; };
-		C565AD272A01B5D300666057 /* ChangeNameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD262A01B5D300666057 /* ChangeNameModal.swift */; };
+		C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD262A01B5D300666057 /* EditNameModal.swift */; };
 		C565AD292A01B6B300666057 /* BondingPointsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD282A01B6B300666057 /* BondingPointsModal.swift */; };
 		C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
@@ -56,7 +56,7 @@
 		C53E14962A01875600D966BA /* EmailTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailTag.swift; sourceTree = "<group>"; };
 		C565AD1F2A01A62E00666057 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		C565AD242A01ACFF00666057 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
-		C565AD262A01B5D300666057 /* ChangeNameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNameModal.swift; sourceTree = "<group>"; };
+		C565AD262A01B5D300666057 /* EditNameModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNameModal.swift; sourceTree = "<group>"; };
 		C565AD282A01B6B300666057 /* BondingPointsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BondingPointsModal.swift; sourceTree = "<group>"; };
 		C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordModal.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
@@ -134,7 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C565AD242A01ACFF00666057 /* TableView.swift */,
-				C565AD262A01B5D300666057 /* ChangeNameModal.swift */,
+				C565AD262A01B5D300666057 /* EditNameModal.swift */,
 				C565AD282A01B6B300666057 /* BondingPointsModal.swift */,
 				C565AD2A2A01B77100666057 /* ChangePasswordModal.swift */,
 			);
@@ -314,7 +314,7 @@
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
 				C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */,
-				C565AD272A01B5D300666057 /* ChangeNameModal.swift in Sources */,
+				C565AD272A01B5D300666057 /* EditNameModal.swift in Sources */,
 				C565AD2B2A01B77100666057 /* ChangePasswordModal.swift in Sources */,
 				C5A5AC6E29FCE75600DA7BD8 /* PendingInvitationView.swift in Sources */,
 				C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */,
