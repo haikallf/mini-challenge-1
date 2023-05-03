@@ -14,6 +14,9 @@ struct ProfileView: View {
     @State var isShowDeleteAccountAlert: Bool = false
     @State var isShowLogOutAlert: Bool = false
     
+    @State var password: String = ""
+    @State var isSecured: Bool = false
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
@@ -80,6 +83,9 @@ struct ProfileView: View {
                     .padding(.leading, 72)
                 
                 TableView(iconName: "trash", text: "Delete Account")
+                    .onTapGesture {
+                        isShowDeleteAccountAlert = true
+                    }
                 
                 Divider()
                     .padding(.leading, 72)
@@ -95,11 +101,38 @@ struct ProfileView: View {
                 }
                 .padding(.horizontal)
                 .padding(.top, 6)
+                .onTapGesture {
+                    isShowLogOutAlert = true
+                }
                 
             }
             
             Spacer()
         }
+        .alert("We are sorry to see you go!", isPresented: $isShowDeleteAccountAlert, actions: {
+            SecureField("Password", text: $password)
+            Button("Cancel", role: .cancel, action: {
+                password = ""
+                isShowDeleteAccountAlert = false
+            })
+            
+            Button("Delete", role: .destructive, action: {})
+            
+        }, message: {
+            Text("This action is irreversible, you will lose all of your data. Type ")
+            + Text("your password")
+                .bold()
+            + Text(" to delete your account.")
+        })
+        
+        .alert("Are you sure you want to log out?", isPresented: $isShowLogOutAlert, actions: {
+            Button("Cancel", role: .cancel, action: {
+                isShowLogOutAlert = false
+            })
+            
+            Button("Log out", role: .destructive, action: {})
+            
+        })
         .padding()
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
