@@ -109,10 +109,7 @@ struct EventCard: View {
                 Button("Reject", role: .destructive, action: {})
                 
             }, message: {
-                Text("Are you sure you want to reject invitation for ")
-                + Text("Mini Challenge 1")
-                    .bold()
-                + Text(" event?")
+                Text("Are you sure you want to reject this event invitation?")
             })
         }
     }
