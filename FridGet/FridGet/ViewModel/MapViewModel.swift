@@ -22,6 +22,8 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     
     @Published var places: [Place] = []
     
+    @Published var userLocation: CLLocation = CLLocation()
+    
     func updateMapType() {
         if (mapType == .standard) {
             mapType = .hybrid
@@ -55,14 +57,14 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    func selectPlace(place: Place) -> Place? {
+    func selectPlace(place: Place) {
         searchText = ""
         
-        guard let coordinate = place.place.location?.coordinate else { return nil }
+        guard let coordinate = place.place.location?.coordinate else { return }
         
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.coordinate = coordinate
-        pointAnnotation.title = place.place.name ?? "Unnamed Road"
+        pointAnnotation.title = place.place.name ?? "Unknown Location"
         
         // remove old search
         mapView.removeAnnotations(mapView.annotations)
@@ -72,7 +74,6 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
-        return place
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
@@ -99,6 +100,8 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
     // get user region
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
+        
+        self.userLocation = location
         
         self.region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         
