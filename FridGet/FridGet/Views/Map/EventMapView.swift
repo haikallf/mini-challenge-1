@@ -11,27 +11,13 @@ import CoreLocation
 struct EventMapView: View {
     @StateObject var mapData = MapViewModel()
     @State var locationManager = CLLocationManager()
-    @State var tempLocation: Place? = nil
-    
-    @Binding var selectedLocation: Place?
-    
-    // for edit event modal only, new event modal always use selectedLocation
-    var eventCoordinate: CLLocationCoordinate2D? = nil
+    @State var selectedLocation: Place? = nil
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
-        
-    func getCurrentPlacemark() {
-        guard let coordinate = eventCoordinate != nil ? eventCoordinate : selectedLocation?.place.location?.coordinate else { return }
-        let location = CLLocation(latitude: coordinate.latitude, longitude: coordinate.longitude)
-        let geocoder = CLGeocoder()
-        geocoder.reverseGeocodeLocation(location) { placemarks, error in
-            guard let placemark = placemarks?.first else {
-                print("Tidak dapat menemukan lokasi")
-                return
-            }
-            mapData.selectPlace(place: Place(place: placemark))
-        }
-    }
+    
+    @Binding var locationName: String
+    @Binding var coordinate: CLLocationCoordinate2D
+    
     
     var body: some View {
         ZStack {
@@ -64,8 +50,7 @@ struct EventMapView: View {
                                         .foregroundColor(.black)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .onTapGesture {
-                                            mapData.selectPlace(place: place)
-                                            tempLocation = place
+                                            selectedLocation = mapData.selectPlace(place: place)
                                         }
 
                                     Divider()
@@ -86,8 +71,9 @@ struct EventMapView: View {
                         Spacer()
                         
                         CustomButton(text: "Select Location", action: {
-                            if (tempLocation != nil) {
-                                selectedLocation = tempLocation
+                            if (selectedLocation != nil) {
+                                locationName = selectedLocation?.place.name ?? "Unnamed Road"
+                                coordinate = selectedLocation?.place.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
                                 presentationMode.wrappedValue.dismiss()
                             }
                         }, isPrimary: false, width: 160)
@@ -127,9 +113,6 @@ struct EventMapView: View {
         .onAppear(perform: {
             locationManager.delegate = mapData
             locationManager.requestWhenInUseAuthorization()
-            
-            getCurrentPlacemark()
-           
         })
         .alert(isPresented: $mapData.permissionDenied, content: {
             Alert(title: Text("Permission Denied"), message: Text("Please enable permission in app settings"), dismissButton: .default(Text("Go to settings"), action: {
@@ -150,8 +133,8 @@ struct EventMapView: View {
     }
 }
 
-//struct EventMapView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        EventMapView(locationName: .constant("Halo"), coordinate: .constant(CLLocationCoordinate2D(latitude: 0, longitude: 0)))
-//    }
-//}
+struct EventMapView_Previews: PreviewProvider {
+    static var previews: some View {
+        EventMapView(locationName: .constant("Halo"), coordinate: .constant(CLLocationCoordinate2D(latitude: 0, longitude: 0)))
+    }
+}

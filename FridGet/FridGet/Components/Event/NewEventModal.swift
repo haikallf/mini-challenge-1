@@ -14,7 +14,8 @@ struct NewEventModal: View {
     @State var eventTitle: String = ""
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
-    @State var selectedLocation: Place? = nil
+    @State var eventLocation: String = ""
+    @State var eventCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
     @State var eventNotes: String = ""
     
@@ -24,8 +25,9 @@ struct NewEventModal: View {
     
     @State var isTimePickerDisabled: Bool = true
     
+    
     func isFormValid() -> Bool {
-        return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && selectedLocation != nil && !eventGuests.isEmpty && eventNotes != "")
+        return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && eventLocation != "" && !eventGuests.isEmpty && eventNotes != "")
     }
     
     var body: some View {
@@ -63,24 +65,19 @@ struct NewEventModal: View {
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        NavigationLink(destination: EventMapView(selectedLocation: $selectedLocation)) {
+                        NavigationLink(destination: EventMapView(locationName: $eventLocation, coordinate: $eventCoordinate)) {
                             HStack {
-                                VStack(alignment: .leading) {
-                                    Text(selectedLocation != nil ? selectedLocation?.place.name ?? "Unknown Location" : "Location")
-                                    
-                                    Text(selectedLocation != nil ? selectedLocation?.place.thoroughfare ?? "Unnamed Road" : "Event Street")
-                                        .font(.caption2)
-                                        .foregroundColor(Color("tertiaryGray"))
-                                }
-                                .foregroundColor(.black)
+                                Text(eventLocation != "" ? eventLocation : "Location")
+                                    .foregroundColor(.black)
                                 
                                 Spacer()
                                 
-                                if (selectedLocation != nil) {
+                                if (eventLocation != "") {
                                     Image(systemName: "xmark.circle.fill")
                                         .foregroundColor(Color("gray"))
                                         .onTapGesture {
-                                            selectedLocation = nil
+                                            eventLocation = ""
+                                            eventCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
                                         }
                                 }
                             }
