@@ -56,17 +56,26 @@ struct EventMapView: View {
                     // displays result autocomplete
                     if (!mapData.places.isEmpty && mapData.searchText != "") {
                         ScrollView {
-                            VStack(spacing: 15) {
+                            VStack(alignment: .leading, spacing: 15) {
                                 ForEach(mapData.places) { place in
-                                    Text(place.place.name ?? "")
-                                        .multilineTextAlignment(.leading)
-                                        .padding(.leading)
-                                        .foregroundColor(.black)
-                                        .frame(maxWidth: .infinity, alignment: .leading)
-                                        .onTapGesture {
-                                            mapData.selectPlace(place: place)
-                                            tempLocation = place
-                                        }
+                                    VStack {
+                                        Text(place.place.name ?? "")
+                                            .multilineTextAlignment(.leading)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .foregroundColor(.black)
+                                            .fontWeight(.semibold)
+                                            
+                                        Text(place.place.thoroughfare ?? "Unnamed Road")
+                                            .multilineTextAlignment(.leading)
+                                            .frame(maxWidth: .infinity, alignment: .leading)
+                                            .font(.footnote)
+                                            .foregroundColor(Color("tertiaryGray"))
+                                    }
+                                    .padding(.leading)
+                                    .onTapGesture {
+                                        mapData.selectPlace(place: place)
+                                        tempLocation = place
+                                    }
 
                                     Divider()
                                 }
