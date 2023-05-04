@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct EditEventModal: View {
     @Environment(\.dismiss) var dismiss
@@ -13,7 +14,13 @@ struct EditEventModal: View {
     @State var eventTitle: String = "Mini Challenge 1"
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
+    @State var selectedLocation: Place? = nil
+    
+    // this is temporary
     @State var eventLocation: String = "The Breeze"
+    @State var eventStreet: String = "BSD Green Office Park"
+    
+    let eventCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.305968, longitude: 106.672272)
     @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
     @State var eventNotes: String = "Jangan lupa bawa laptop"
     
@@ -22,7 +29,7 @@ struct EditEventModal: View {
     @State var isShowLocationModal: Bool = false
     
     @State var isTimePickerDisabled: Bool = true
-    
+       
     func isFormValid() -> Bool {
         return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && eventLocation != "" && !eventGuests.isEmpty && eventNotes != "")
     }
@@ -62,10 +69,32 @@ struct EditEventModal: View {
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        TextField("Location", text: $eventLocation)
-                            .multilineTextAlignment(.leading)
+                        NavigationLink(destination: EventMapView(selectedLocation: $selectedLocation, eventCoordinate: eventCoordinate)) {
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(selectedLocation != nil ? selectedLocation?.place.name ?? "Unknown Location" : (eventLocation != "" ? eventLocation : "Location"))
+                                        .foregroundColor(.black)
+                                    
+                                    Text(selectedLocation != nil ? selectedLocation?.place.thoroughfare ?? "Unnamed Road" : (eventStreet != "" ? eventStreet : "Event Street"))
+                                        .font(.caption2)
+                                        .foregroundColor(Color("tertiaryGray"))
+                                }
+    
+                                Spacer()
+                                
+                                if (eventLocation != "") {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(Color("gray"))
+                                        .onTapGesture {
+                                            selectedLocation = nil
+                                            eventLocation = ""
+                                            eventStreet = ""
+                                        }
+                                }
+                            }
+                        }
                     }
-                    .padding([.leading, .vertical])
+                    .padding()
                     .background(.white)
                     .cornerRadius(8)
                     
