@@ -11,6 +11,13 @@ import CoreLocation
 struct EventMapView: View {
     @StateObject var mapData = MapViewModel()
     @State var locationManager = CLLocationManager()
+    @State var selectedLocation: Place? = nil
+    
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
+    @Binding var locationName: String
+    @Binding var coordinate: CLLocationCoordinate2D
+    
     
     var body: some View {
         ZStack {
@@ -25,6 +32,7 @@ struct EventMapView: View {
                             .foregroundColor(.gray)
                         
                         TextField("Search", text: $mapData.searchText)
+                            .multilineTextAlignment(.leading)
                     }
                     .padding(.vertical, 10)
                     .padding(.horizontal)
@@ -42,7 +50,7 @@ struct EventMapView: View {
                                         .foregroundColor(.black)
                                         .frame(maxWidth: .infinity, alignment: .leading)
                                         .onTapGesture {
-                                            mapData.selectPlace(place: place)
+                                            selectedLocation = mapData.selectPlace(place: place)
                                         }
 
                                     Divider()
@@ -58,32 +66,53 @@ struct EventMapView: View {
                 
                 Spacer()
                 
-                VStack {
-                    Button(action: mapData.focusLocation, label: {
-                        Image(systemName: "location.fill")
-                            .font(.title2)
-                            .padding(10)
-                            .background(.black)
-                            .clipShape(Circle())
-                    })
+                ZStack {
+                    HStack {
+                        Spacer()
+                        
+                        CustomButton(text: "Select Location", action: {
+                            if (selectedLocation != nil) {
+                                locationName = selectedLocation?.place.name ?? "Unnamed Road"
+                                coordinate = selectedLocation?.place.location?.coordinate ?? CLLocationCoordinate2D(latitude: 0, longitude: 0)
+                                presentationMode.wrappedValue.dismiss()
+                            }
+                        }, isPrimary: false, width: 160)
+                            .frame(alignment: .center)
+                        Spacer()
+                    }
                     
-                    Button(action: mapData.updateMapType, label: {
-                        Image(systemName: mapData.mapType == .standard ? "network" : "map")
-                            .font(.title2)
-                            .padding(10)
-                            .background(.black)
-                            .clipShape(Circle())
-                    })
+                    HStack {
+                        Spacer()
+                        
+                        VStack {
+                            Button(action: mapData.focusLocation, label: {
+                                Image(systemName: "location.fill")
+                                    .font(.title2)
+                                    .padding(10)
+                                    .background(.blue)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                            })
+                            
+                            Button(action: mapData.updateMapType, label: {
+                                Image(systemName: mapData.mapType == .standard ? "network" : "map")
+                                    .font(.title2)
+                                    .padding(10)
+                                    .background(.blue)
+                                    .foregroundColor(.white)
+                                    .clipShape(Circle())
+                                    .frame(alignment: .trailing)
+                            })
+                        }
+                    }
                 }
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity)
                 .padding()
             }
         }
         .onAppear(perform: {
-            print("halo")
             locationManager.delegate = mapData
             locationManager.requestWhenInUseAuthorization()
-            print("Hola")
         })
         .alert(isPresented: $mapData.permissionDenied, content: {
             Alert(title: Text("Permission Denied"), message: Text("Please enable permission in app settings"), dismissButton: .default(Text("Go to settings"), action: {
@@ -106,6 +135,6 @@ struct EventMapView: View {
 
 struct EventMapView_Previews: PreviewProvider {
     static var previews: some View {
-        EventMapView()
+        EventMapView(locationName: .constant("Halo"), coordinate: .constant(CLLocationCoordinate2D(latitude: 0, longitude: 0)))
     }
 }

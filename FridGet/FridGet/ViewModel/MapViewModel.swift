@@ -55,14 +55,13 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         }
     }
     
-    func selectPlace(place: Place) {
+    func selectPlace(place: Place) -> Place? {
         searchText = ""
         
-        guard let coordinate = place.place.location?.coordinate else { return }
+        guard let coordinate = place.place.location?.coordinate else { return nil }
         
         let pointAnnotation = MKPointAnnotation()
         pointAnnotation.coordinate = coordinate
-        print(coordinate)
         pointAnnotation.title = place.place.name ?? "Unnamed Road"
         
         // remove old search
@@ -73,6 +72,7 @@ class MapViewModel: NSObject, ObservableObject, CLLocationManagerDelegate {
         let coordinateRegion = MKCoordinateRegion(center: coordinate, latitudinalMeters: 10000, longitudinalMeters: 10000)
         mapView.setRegion(coordinateRegion, animated: true)
         mapView.setVisibleMapRect(mapView.visibleMapRect, animated: true)
+        return place
     }
     
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
