@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct NewEventModal: View {
     @Environment(\.dismiss) var dismiss
@@ -14,6 +15,7 @@ struct NewEventModal: View {
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
     @State var eventLocation: String = ""
+    @State var eventCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 0, longitude: 0)
     @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
     @State var eventNotes: String = ""
     
@@ -22,6 +24,7 @@ struct NewEventModal: View {
     @State var isShowLocationModal: Bool = false
     
     @State var isTimePickerDisabled: Bool = true
+    
     
     func isFormValid() -> Bool {
         return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && eventLocation != "" && !eventGuests.isEmpty && eventNotes != "")
@@ -62,10 +65,25 @@ struct NewEventModal: View {
                     .cornerRadius(8)
                     
                     VStack(alignment: .leading) {
-                        TextField("Location", text: $eventLocation)
-                            .multilineTextAlignment(.leading)
+                        NavigationLink(destination: EventMapView(locationName: $eventLocation, coordinate: $eventCoordinate)) {
+                            HStack {
+                                Text(eventLocation != "" ? eventLocation : "Location")
+                                    .foregroundColor(.black)
+                                
+                                Spacer()
+                                
+                                if (eventLocation != "") {
+                                    Image(systemName: "xmark.circle.fill")
+                                        .foregroundColor(Color("gray"))
+                                        .onTapGesture {
+                                            eventLocation = ""
+                                            eventCoordinate = CLLocationCoordinate2D(latitude: 0, longitude: 0)
+                                        }
+                                }
+                            }
+                        }
                     }
-                    .padding([.leading, .vertical])
+                    .padding()
                     .background(.white)
                     .cornerRadius(8)
                     
