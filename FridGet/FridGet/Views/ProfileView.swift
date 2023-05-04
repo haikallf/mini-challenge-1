@@ -14,7 +14,7 @@ struct ProfileView: View {
     @State var isShowDeleteAccountAlert: Bool = false
     @State var isShowLogOutAlert: Bool = false
     
-    @State var password: String = ""
+    @State var email: String = ""
     @State var isSecured: Bool = false
     
     var body: some View {
@@ -110,19 +110,16 @@ struct ProfileView: View {
             Spacer()
         }
         .alert("We are sorry to see you go!", isPresented: $isShowDeleteAccountAlert, actions: {
-            SecureField("Password", text: $password)
+            TextField("Enter your email", text: $email)
             Button("Cancel", role: .cancel, action: {
-                password = ""
+                email = ""
                 isShowDeleteAccountAlert = false
             })
             
             Button("Delete", role: .destructive, action: {})
             
         }, message: {
-            Text("This action is irreversible, you will lose all of your data. Type ")
-            + Text("your password")
-                .bold()
-            + Text(" to delete your account.")
+            Text("This action is irreversible, you will lose all of your data. Type your email to delete your account.")
         })
         
         .alert("Are you sure you want to log out?", isPresented: $isShowLogOutAlert, actions: {

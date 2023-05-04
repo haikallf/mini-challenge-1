@@ -13,7 +13,7 @@ struct PendingInvitationView: View {
     
     var body: some View {
         Group {
-            if (!pendingEvents.isEmpty) {
+            if (pendingEvents.isEmpty) {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(1..<10) { idx in

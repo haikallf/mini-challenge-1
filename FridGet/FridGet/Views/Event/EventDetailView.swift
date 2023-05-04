@@ -14,7 +14,7 @@ struct EventDetailView: View {
     var isOver: Bool = true
     
     @State var isShowDeleteEventAlert: Bool = false
-    @State var isShowEditEventAlert: Bool = false
+    @State var isShowEditEventModal: Bool = false
     
     var body: some View {
         ScrollView {
@@ -100,7 +100,6 @@ struct EventDetailView: View {
                         UserCard(status: "pending")
                         UserCard(status: "rejected")
                     }
-                    
                 }
                 
                 HStack {
@@ -122,15 +121,6 @@ struct EventDetailView: View {
                     
                     Spacer()
                 }
-                
-                Button(action: {
-                    isShowDeleteEventAlert = true
-                }) {
-                    Text("Delete Event")
-                        .fontWeight(.semibold)
-                        .foregroundColor(Color("lightRed"))
-                }
-                .padding()
 
                 Spacer()
             }
@@ -145,13 +135,24 @@ struct EventDetailView: View {
                 
                 if (eventStatus == "owner") {
                     ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {
-                            isShowEditEventAlert.toggle()
-                        }) {
-                            Text("Edit")
-                                .foregroundColor(.blue)
-                        }
-                        .sheet(isPresented: $isShowEditEventAlert) {
+                        Menu(content: {
+                            Button(action: {
+                                isShowEditEventModal.toggle()
+                            }) {
+                                Label("Edit Event", systemImage: "pencil")
+                            }
+                            
+                            Button(role: .destructive, action: {
+                                isShowDeleteEventAlert = true
+                            }) {
+                                Label("Delete Event", systemImage: "trash")
+                            }
+                            .foregroundColor(.red)
+                         }, label: {
+                             Image(systemName: "ellipsis.circle")
+                                 .foregroundColor(.blue)
+                         })
+                        .sheet(isPresented: $isShowEditEventModal) {
                             NavigationView {
                                 EditEventModal()
                             }
@@ -167,10 +168,7 @@ struct EventDetailView: View {
                 Button("Delete", role: .destructive, action: {})
                 
             }, message: {
-                Text("Are you sure you want to delete ")
-                + Text("Mini Challenge 1")
-                    .bold()
-                + Text(" event?")
+                Text("Are you sure you want to delete this event?")
             })
         }
     }

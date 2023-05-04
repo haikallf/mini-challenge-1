@@ -8,17 +8,17 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isUserCurrentlyLoggedIn: Bool = false
+    @State private var isUserCurrentlyLoggedIn: Bool = true
     
     var body: some View {
         NavigationView {
             VStack {
-//                if self.isUserCurrentlyLoggedIn {
-//                    EventView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
-//                } else {
-//                    PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
-//                }
-                EventMapView()
+                if self.isUserCurrentlyLoggedIn {
+                    EventView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
+                } else {
+                    PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
+                }
+//                EventMapView()
             }
         }
     }

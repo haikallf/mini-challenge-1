@@ -12,6 +12,8 @@ struct UserCard: View {
     var isOwner: Bool = true
     var isArrived: Bool = false
     
+    @State var isShowRemoveGuestAlert: Bool = false
+    
     var body: some View {
         HStack {
             InitialAvatar(initial: "HA")
@@ -59,10 +61,20 @@ struct UserCard: View {
                     .font(.callout)
                     .foregroundColor(Color("secondaryGray"))
                     .onTapGesture {
-                        print("Delete user")
+                        isShowRemoveGuestAlert = true
                     }
             }
         }
+        .alert("Remove a guest", isPresented: $isShowRemoveGuestAlert, actions: {
+            Button("Cancel", role: .cancel, action: {
+                isShowRemoveGuestAlert = false
+            })
+            
+            Button("Remove", role: .destructive, action: {})
+            
+        }, message: {
+            Text("Are you sure you want to remove a guest from the guest list?")
+        })
     }
 }
 
