@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PreAuthCarousel: View {
     @State private var pageIndex = 1
+    var timer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
     private let intros: [PreAuthIntro] = PreAuthIntro.all
     private let dotAppearance = UIPageControl.appearance()
     
@@ -32,6 +33,12 @@ struct PreAuthCarousel: View {
             }
             .frame(maxHeight: 480)
             .padding(.bottom, 10)
+            .onReceive(timer, perform: { _ in
+                withAnimation {
+                    pageIndex = pageIndex < intros.count ? pageIndex + 1 : 1
+                }
+                
+            })
         }
     }
     

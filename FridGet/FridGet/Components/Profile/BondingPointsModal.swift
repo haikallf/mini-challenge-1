@@ -45,9 +45,10 @@ struct BondingPointsModal: View {
                 } else {
                     VStack(alignment: .center, spacing: 36) {
                         Spacer()
-                        Rectangle()
-                            .fill(Color("gray"))
-                            .frame(width: 342, height: 283)
+                        Image("bonding-point-empty")
+                            .frame(width: 248)
+                            .aspectRatio(contentMode: .fit)
+                            .padding(.top, 50)
                         
                         Text("You don’t have any pending invitation. How about you create new event and start inviting your friends?")
                             .font(.callout)
