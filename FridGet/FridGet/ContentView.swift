@@ -18,7 +18,6 @@ struct ContentView: View {
                 } else {
                     PreAuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn)
                 }
-//                EventMapView()
             }
         }
     }

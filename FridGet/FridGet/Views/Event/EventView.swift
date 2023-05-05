@@ -26,7 +26,7 @@ struct EventView: View {
             Spacer()
             
             NavigationLink(destination: ProfileView()) {
-                InitialAvatar(initial: "HA", fontSize: 20)
+                InitialAvatar(initial: "HA", fontSize: 20, size: 45)
             }
         }
         .padding(.top, 44)
