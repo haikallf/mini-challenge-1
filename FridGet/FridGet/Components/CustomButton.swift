@@ -12,6 +12,7 @@ struct CustomButton: View {
     var action: () -> Void
     var isPrimary: Bool
     var width: Double = .infinity
+    var isDisabled: Bool = false
     
     var body: some View {
         if (!isPrimary) {
@@ -24,6 +25,7 @@ struct CustomButton: View {
             }
             .background(.white)
             .cornerRadius(1000)
+            .opacity(isDisabled ? 0.36 : 1)
         } else {
             Button(action: action) {
                 Text(text)
@@ -35,6 +37,7 @@ struct CustomButton: View {
             }
             .background(.blue)
             .cornerRadius(1000)
+            .opacity(isDisabled ? 0.36 : 1)
         }
     }
 }

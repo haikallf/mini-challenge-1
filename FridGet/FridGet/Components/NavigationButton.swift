@@ -10,12 +10,12 @@ import SwiftUI
 struct NavigationButton<Destination: View>: View {
     let destination: Destination
     let text: String
-    var isBordered: Bool = false
+    var isSecondary: Bool = false
     let maxWidth: CGFloat = .infinity
     
     var body: some View {
         Group {
-            if(isBordered) {
+            if(isSecondary) {
                 NavigationLink(destination: destination) {
                     Text(text)
                         .fontWeight(.semibold)
@@ -28,7 +28,7 @@ struct NavigationButton<Destination: View>: View {
                         )
                     
                 }
-                .background(Color("lightBlue"))
+                .background(.white)
                 .cornerRadius(1000)
             } else {
                 NavigationLink(destination: destination) {
