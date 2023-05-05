@@ -17,9 +17,10 @@ struct PreAuthAdapter: View {
                 .font(.system(size: 22))
                 .fontWeight(.bold)
             
-            Rectangle()
-                .fill(.gray)
-                .frame(width: 358, height: 267)
+            Image(filename)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 358)
         }
         
     }
