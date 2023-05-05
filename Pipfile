@@ -1,0 +1,35 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "==3.2"
+psycopg2-binary = "*"
+djangorestframework = "==3.12.4"
+django-rest-knox = "*"
+datetime = "*"
+djoser = "*"
+django-import-export = "==2.0.2"
+djangorestframework-simplejwt = "==4.7.2"
+social-auth-app-django = "*"
+django-rest-swagger = "*"
+django-password-reset = "*"
+django-cors-headers = "*"
+django-storages = "*"
+xlwt = "*"
+boto3 = "==1.16.56"
+django-ckeditor = "*"
+django-filter = "==21.1"
+django-rest-passwordreset = "*"
+pillow = "==8.3.0"
+numpy = "*"
+requests = "*"
+drf-yasg = "*"
+django-crispy-forms = "==1.8.1"
+gunicorn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.11"

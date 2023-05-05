@@ -13,6 +13,10 @@
 		71A7EDA829E9459F0082E1C9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */; };
 		71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDA929E9459F0082E1C9 /* Persistence.swift */; };
 		71A7EDAD29E9459F0082E1C9 /* FridGet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 71A7EDAB29E9459F0082E1C9 /* FridGet.xcdatamodeld */; };
+		71EC86102A00FD17001286C1 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EC860F2A00FD17001286C1 /* ModelData.swift */; };
+		71EC86122A01049A001286C1 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EC86112A01049A001286C1 /* TestView.swift */; };
+		71F5C1712A026A08008E2F69 /* ItemModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F5C1702A026A08008E2F69 /* ItemModelData.swift */; };
+		71F5C1732A04E33A008E2F69 /* POSTAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F5C1722A04E33A008E2F69 /* POSTAPICall.swift */; };
 		C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2D29EB1CC400FC77FB /* TextInputField.swift */; };
 		C5366E3029EB1E4E00FC77FB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */; };
 		C5A524E629FDAAD7007B08C7 /* NewEventModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */; };
@@ -42,6 +46,10 @@
 		71A7EDA729E9459F0082E1C9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71A7EDA929E9459F0082E1C9 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		71A7EDAC29E9459F0082E1C9 /* FridGet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FridGet.xcdatamodel; sourceTree = "<group>"; };
+		71EC860F2A00FD17001286C1 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		71EC86112A01049A001286C1 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
+		71F5C1702A026A08008E2F69 /* ItemModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModelData.swift; sourceTree = "<group>"; };
+		71F5C1722A04E33A008E2F69 /* POSTAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POSTAPICall.swift; sourceTree = "<group>"; };
 		C5366E2D29EB1CC400FC77FB /* TextInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputField.swift; sourceTree = "<group>"; };
 		C5366E2F29EB1E4E00FC77FB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		C5A524E529FDAAD7007B08C7 /* NewEventModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventModal.swift; sourceTree = "<group>"; };
@@ -139,6 +147,9 @@
 			isa = PBXGroup;
 			children = (
 				C5B2F69B29FC554500D16C62 /* PreAuthIntro.swift */,
+				71EC860F2A00FD17001286C1 /* ModelData.swift */,
+				71F5C1702A026A08008E2F69 /* ItemModelData.swift */,
+				71F5C1722A04E33A008E2F69 /* POSTAPICall.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -158,6 +169,7 @@
 				C5B2F6A129FC5F5C00D16C62 /* EventView.swift */,
 				C5A5AC6D29FCE75600DA7BD8 /* PendingInvitationView.swift */,
 				C5A5AC6F29FD04DE00DA7BD8 /* EventDetailView.swift */,
+				71EC86112A01049A001286C1 /* TestView.swift */,
 			);
 			path = Event;
 			sourceTree = "<group>";
@@ -257,17 +269,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5B2F69E29FC563600D16C62 /* PreAuthCarousel.swift in Sources */,
+				71EC86122A01049A001286C1 /* TestView.swift in Sources */,
 				C5A8681E29FDA57B00AC8103 /* InitialAvatar.swift in Sources */,
 				DE62179229EB116500B69181 /* PreAuthView.swift in Sources */,
+				71F5C1732A04E33A008E2F69 /* POSTAPICall.swift in Sources */,
 				71A7EDAA29E9459F0082E1C9 /* Persistence.swift in Sources */,
 				C5366E2E29EB1CC400FC77FB /* TextInputField.swift in Sources */,
 				DE62179529EB1A2000B69181 /* SecureInputField.swift in Sources */,
+				71EC86102A00FD17001286C1 /* ModelData.swift in Sources */,
 				DE62179729FBDD5B00B69181 /* NavigationButton.swift in Sources */,
 				C5A8681C29FDA3A000AC8103 /* InvitationCard.swift in Sources */,
 				C5B2F6A229FC5F5C00D16C62 /* EventView.swift in Sources */,
 				C5B2F6A529FC611400D16C62 /* NoEvent.swift in Sources */,
 				C5B2F69C29FC554500D16C62 /* PreAuthIntro.swift in Sources */,
 				DE62178929EAFE1900B69181 /* AuthView.swift in Sources */,
+				71F5C1712A026A08008E2F69 /* ItemModelData.swift in Sources */,
 				C5B2F6A729FC677900D16C62 /* EventCard.swift in Sources */,
 				C5A5AC7029FD04DE00DA7BD8 /* EventDetailView.swift in Sources */,
 				DE62178E29EB0CF000B69181 /* ContentView.swift in Sources */,
