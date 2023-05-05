@@ -14,11 +14,11 @@ struct PreAuthView: View {
     var body: some View {
         VStack {
             PreAuthCarousel()
-            
             VStack(spacing: 16) {
-                NavigationButton(destination: AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn, isLogin: true), text: "Log in", isBordered: true)
-                
                 NavigationButton(destination: AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn, isLogin: false), text: "Create account")
+                
+                NavigationButton(destination: AuthView(isUserCurrentlyLoggedIn: $isUserCurrentlyLoggedIn, isLogin: true), text: "Log in", isSecondary: true)
+
             }
         }
         .padding()

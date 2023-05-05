@@ -16,11 +16,12 @@ struct AuthView: View {
     @State var fullname: String = ""
     
     @State var errorsList: [String] = []
+    @State var isButtonDisabled: Bool = true
     
     var wrongPasswordLogin: Bool = true
     
     func authValidation() {
-        if (!isValidEmail(email: email)) {
+        if (email != "" && !isValidEmail(email: email)) {
             errorsList.append("Email format is invalid")
         }
         
@@ -40,6 +41,14 @@ struct AuthView: View {
             if (email == "" || password == "" || fullname == "") {
                 errorsList.append("Please fill all fields")
             }
+        }
+    }
+    
+    func isEmptyField() -> Bool {
+        if (isLogin) {
+            return email == "" || password == ""
+        } else {
+            return email == "" || password == "" || fullname == ""
         }
     }
     
@@ -102,8 +111,9 @@ struct AuthView: View {
             CustomButton(text: isLogin ? "Log In" : "Create Account", action: {
                 errorsList.removeAll()
                 authValidation()
-            }, isPrimary: true)
+            }, isPrimary: true, isDisabled: isEmptyField())
                 .padding(.top, 64)
+                .disabled(isEmptyField())
             
             HStack {
                 if (!isLogin) {
@@ -112,6 +122,9 @@ struct AuthView: View {
                     Button(action: {
                         isLogin = true
                         fullname = ""
+                        email = ""
+                        password = ""
+                        errorsList.removeAll()
                         
                     }) {
                         Text("Log in")
@@ -125,6 +138,10 @@ struct AuthView: View {
                     
                     Button(action: {
                         isLogin = false
+                        fullname = ""
+                        email = ""
+                        password = ""
+                        errorsList.removeAll()
                     }) {
                         Text("Create Account")
                             .underline()

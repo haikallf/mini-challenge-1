@@ -13,7 +13,7 @@ struct PendingInvitationView: View {
     
     var body: some View {
         Group {
-            if (pendingEvents.isEmpty) {
+            if (!pendingEvents.isEmpty) {
                 ScrollView {
                     VStack(spacing: 12) {
                         ForEach(1..<10) { idx in
@@ -35,7 +35,7 @@ struct PendingInvitationView: View {
                         .fill(Color("gray"))
                         .frame(width: 342, height: 283)
                     
-                    Text("You don’t have any pending invitation. How about you start inviting your friends?")
+                    Text("You don’t have any pending invitation. How about you create new event and start inviting your friends?")
                         .font(.callout)
                         .fontWeight(.semibold)
                         .multilineTextAlignment(.center)
