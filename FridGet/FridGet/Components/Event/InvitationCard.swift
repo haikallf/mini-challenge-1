@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct InvitationCard: View {
-    var ownerName: String = "Satria"
-    var isPending: Bool = false
+//    var ownerName: String = "Satria"
+//    var isPending: Bool = false
+    
+    var member: ScheduleMember
     
     var body: some View {
         VStack {
             HStack(alignment: .top) {
-                InitialAvatar(initial: "SJ")
+                InitialAvatar(initial: "\(member.schedule.user.fullname.components(separatedBy: " ").map { String($0.prefix(1))}.joined().prefix(2))").textCase(.uppercase)
+                
                 
                 VStack(alignment: .leading) {
-                    Text("\(ownerName) has invited you to an event")
+                    Text("\(member.schedule.user.fullname) has invited you to an event")
                         .foregroundColor(.black)
                         .font(.system(size: 16))
                         .fontWeight(.semibold)
@@ -68,6 +71,6 @@ struct InvitationCard: View {
 
 struct InvitationCard_Previews: PreviewProvider {
     static var previews: some View {
-        InvitationCard()
+        InvitationCard(member: ScheduleMember(id: 0, schedule: Schedule(id: 0, created_at: "", user: User(email: "", fullname: ""), nama: "", latitude: "", longitude: "", alamat: "", namatempat: "", tanggal: "", waktu: "", status_schedule: "", note: ""), member: User(email: "", fullname: ""), created_at: "", status_member: ""))
     }
 }

@@ -8,25 +8,29 @@
 import SwiftUI
 
 struct EventDetailView: View {
-    var eventStatus: String = "owner" // accepted, owner, pending
-    var isHappening: Bool = false
-    var isArrived: Bool = true
-    var isOver: Bool = true
+//    var eventStatus: String = "owner" // accepted, owner, pending
+//    var isHappening: Bool = false
+//    var isArrived: Bool = true
+//    var isOver: Bool = true
     
     @State var isShowDeleteEventAlert: Bool = false
     @State var isShowEditEventModal: Bool = false
+    
+    @StateObject var viewModel = ViewModel()
+    
+    var member: ScheduleMember
     
     var body: some View {
         ScrollView {
             VStack {
                 HStack {
                     VStack(alignment: .leading) {
-                        Text("Ini Nama Eventnya")
+                        Text("\(member.schedule.nama)")
                             .foregroundColor(.black)
                             .font(.system(size: 22))
                             .fontWeight(.semibold)
                         
-                        Text("Thursday, 27 April 2023 16.00")
+                        Text("\(member.schedule.tanggal), \(member.schedule.waktu)")
                             .foregroundColor(Color("gray"))
                             .font(.system(size: 12))
                     }
@@ -36,17 +40,17 @@ struct EventDetailView: View {
                 .padding(.vertical)
                 
                 Group {
-                    if (eventStatus == "pending") {
-                        InvitationCard()
+                    if (member.status_member == "Pending") {
+                        InvitationCard(member: member)
                     } else {
-                        if (isHappening) {
-                            if (isArrived) {
-                                QualityTimeCard()
+                        if (member.schedule.status_schedule == "Ongoing") {
+                            if (member.status_member == "Arrived") {
+                                QualityTimeCard(member: member)
                             } else {
-                                ArrivedConfirmationCard(action: {})
+                                ArrivedConfirmationCard(action: {}, member: member)
                             }
-                        } else if (isOver) {
-                            EventOverCard()
+                        } else if (member.schedule.status_schedule == "Success") {
+                            EventOverCard(member: member)
 //                            QualityTimeCard()
 //                            ArrivedConfirmationCard(action: {})
                         }
@@ -66,9 +70,13 @@ struct EventDetailView: View {
                         .foregroundColor(Color("gray"))
                         .padding(.bottom, 1)
                         
-                        Text("The Breeze BSD City")
+                        Text(member.schedule.namatempat)
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
+                        Spacer()
+                        Text(member.schedule.alamat)
+                            .font(.system(size: 12))
+                            .foregroundColor(Color("gray"))
                     }
                     
                     Spacer()
@@ -78,7 +86,7 @@ struct EventDetailView: View {
                     Image(systemName: "person.2.fill")
                         .font(.system(size: 12))
                     
-                    Text("Guests — 4")
+                    Text("Guest - \(viewModel.scheduleMember.filter({$0.schedule.id == member.schedule.id}).count)")
                         .font(.system(size: 12))
                     
                     Spacer()
@@ -88,18 +96,13 @@ struct EventDetailView: View {
                 .padding(.bottom, 1)
                 
                 VStack(spacing: 12) {
-                    Group {
-                        UserCard(status: "organizer", isArrived: true)
-                        UserCard(status: "accepted", isArrived: true)
-                        UserCard(status: "pending")
-                        UserCard(status: "rejected")
+                    ForEach(viewModel.scheduleMember.filter({$0.schedule.id == member.schedule.id}), id:\.self) { item in
+                        UserCard(member: ScheduleMember(id: item.id, schedule: Schedule(id: item.schedule.id, created_at: item.schedule.created_at, user: User(email: item.schedule.user.email, fullname: item.schedule.user.fullname), nama: item.schedule.nama, latitude: item.schedule.latitude, longitude: item.schedule.longitude, alamat: item.schedule.alamat, namatempat: item.schedule.namatempat, tanggal: item.schedule.tanggal, waktu: item.schedule.waktu, status_schedule: item.schedule.status_schedule, note: item.schedule.note), member: User(email: item.member.email, fullname: item.member.fullname), created_at: item.created_at, status_member: item.status_member))
+                        
+//                                UserCard(status: "accepted")
                     }
-                    
-                    Group {
-                        UserCard(status: "accepted")
-                        UserCard(status: "pending")
-                        UserCard(status: "rejected")
-                    }
+                }.task{
+                    viewModel.loadSchedule()
                 }
                 
                 HStack {
@@ -116,7 +119,7 @@ struct EventDetailView: View {
                 .padding(.bottom, 1)
                 
                 HStack {
-                    Text("Nanti jangan lupa bawa board game ya masing-masing.")
+                    Text("\(member.schedule.note)")
                         .font(.system(size: 15))
                     
                     Spacer()
@@ -133,7 +136,7 @@ struct EventDetailView: View {
                         .fontWeight(.semibold)
                 }
                 
-                if (eventStatus == "owner") {
+                if (member.status_member == "Owner") {
                     ToolbarItem(placement: .navigationBarTrailing) {
                         Menu(content: {
                             Button(action: {
@@ -154,7 +157,7 @@ struct EventDetailView: View {
                          })
                         .sheet(isPresented: $isShowEditEventModal) {
                             NavigationView {
-                                EditEventModal()
+                                EditEventModal(eventTitle: member.schedule.nama, eventLocation: member.schedule.namatempat, eventStreet: member.schedule.alamat, eventNotes: member.schedule.note)
                             }
                         }
                     }
@@ -176,6 +179,6 @@ struct EventDetailView: View {
 
 struct EventDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailView()
+        EventDetailView(member: ScheduleMember(id: 0, schedule: Schedule(id: 0, created_at: "", user: User(email: "", fullname: ""), nama: "", latitude: "", longitude: "", alamat: "", namatempat: "", tanggal: "", waktu: "", status_schedule: "", note: ""), member: User(email: "", fullname: ""), created_at: "", status_member: ""))
     }
 }

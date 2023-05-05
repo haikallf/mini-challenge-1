@@ -14,8 +14,11 @@ struct EventView: View {
     @State private var isAvailableOngoing: Bool = true
     @State var universalSize = UIScreen.main.bounds
     @State private var showModal = false
-
+    
+    @StateObject var globalString = GlobalString()
+    
     @Binding var isUserCurrentlyLoggedIn: Bool
+    @StateObject var viewModel = ViewModel()
     
     var body: some View {
         HStack {
@@ -26,7 +29,7 @@ struct EventView: View {
             Spacer()
             
             NavigationLink(destination: ProfileView()) {
-                InitialAvatar(initial: "HA", fontSize: 20, size: 45)
+                InitialAvatar(initial: "\(globalString.fullnamelogin.components(separatedBy: " ").map { String($0.prefix(1))}.joined().prefix(2))",fontSize: 20, size: 45).textCase(.uppercase)
             }
         }
         .padding(.top, 44)
@@ -43,14 +46,14 @@ struct EventView: View {
             ZStack {
                 VStack {
                     if isOngoing == 0 {
-                        if (isAvailableHistory) {
-                            ScrollView {
-                                EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg")
-                                EventCard(eventName: "Ini nama eventnya")
-                                EventCard(eventName: "Ini nama eventnya")
-                                EventCard(eventName: "Ini nama eventnya")
-                                EventCard(eventName: "Ini nama eventnya")
-                                EventCard(eventName: "Ini nama eventnya")
+                        let _ = print("member schedule \(viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && ($0.status_member == "Accepted" || $0.status_member == "Owner") && $0.schedule.status_schedule == "Success"} ).count)")
+                        if(viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && ($0.status_member == "Accepted" || $0.status_member == "Owner") && $0.schedule.status_schedule == "Success"} ).count != 0) {
+                            VStack(spacing: 24){
+                                ScrollView{
+                                    ForEach(viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && ($0.status_member == "Accepted" || $0.status_member == "Owner") && $0.schedule.status_schedule == "Success"} ), id:\.self) { item in //filter data before passing to for each
+                                        EventCard(member: ScheduleMember(id: item.id, schedule: Schedule(id: item.schedule.id, created_at: item.schedule.created_at, user: User(email: item.schedule.user.email, fullname: item.schedule.user.fullname), nama: item.schedule.nama, latitude: item.schedule.latitude, longitude: item.schedule.longitude, alamat: item.schedule.alamat, namatempat: item.schedule.namatempat, tanggal: item.schedule.tanggal, waktu: item.schedule.waktu, status_schedule: item.schedule.status_schedule, note: item.schedule.note), member: User(email: item.member.fullname, fullname: item.member.fullname), created_at: item.created_at, status_member: item.status_member))
+                                    }
+                                }
                             }
                         } else {
                             NoEvent(isOngoing: isOngoing)
@@ -69,7 +72,7 @@ struct EventView: View {
                                             .fill(.red)
                                             .frame(maxWidth: 20, maxHeight: 20)
                                         
-                                        Text("1")
+                                        Text("\(viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && $0.status_member == "Pending"} ).count)")
                                             .foregroundColor(.white)
                                             .font(.system(size: 13))
                                     }
@@ -87,22 +90,18 @@ struct EventView: View {
                         }
                         .padding(.vertical, 10)
                         
-                        if (isAvailableOngoing) {
-                            ScrollView {
-                                VStack(spacing: 12) {
-                                    // ForEach(arr.enumerated()) { idx, elmt in
-                                    ForEach(1..<10) { idx in
-                                        Group {
-                                            EventCard(eventName: "Mini Challenge 1")
-                                            
-                                            if (idx != 9) { // last idx or arr.count == 1
-                                                Divider()
-                                                    .frame(height: 1)
-                                                    .padding(.leading, 12)
-                                            }
-                                        }
-                                        .padding(.horizontal)
+                        if(!viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && ($0.status_member == "Accepted" || $0.status_member == "Owner") && ($0.schedule.status_schedule == "Created" || $0.schedule.status_schedule == "Ongoing")} ).isEmpty) {
+                            VStack(spacing: 24) {
+                                ScrollView {
+                                    ForEach(viewModel.scheduleMember.filter({$0.member.fullname == globalString.fullnamelogin && ($0.status_member == "Accepted" || $0.status_member == "Owner") && ($0.schedule.status_schedule == "Created" || $0.schedule.status_schedule == "Ongoing")} ), id:\.self) { item in //filter data before passing to for each
+                                        EventCard(member: ScheduleMember(id: item.id, schedule: Schedule(id: item.schedule.id, created_at: item.schedule.created_at, user: User(email: item.schedule.user.email, fullname: item.schedule.user.fullname), nama: item.schedule.nama, latitude: item.schedule.latitude, longitude: item.schedule.longitude, alamat: item.schedule.alamat, namatempat: item.schedule.namatempat, tanggal: item.schedule.tanggal, waktu: item.schedule.waktu, status_schedule: item.schedule.status_schedule, note: item.schedule.note), member: User(email: item.member.fullname, fullname: item.member.fullname), created_at: item.created_at, status_member: item.status_member))
                                     }
+//                                    EventCard(eventName: "Ini nama event yang panjanggggggggggggggggg", eventLocation: "The Breeze")
+//                                    EventCard(eventName: "Ini nama eventnya", eventLocation: "The Breeze")
+//                                    EventCard(eventName: "Ini nama eventnya", eventLocation: "The Breeze")
+//                                    EventCard(eventName: "Ini nama eventnya", eventLocation: "The Breeze")
+//                                    EventCard(eventName: "Ini nama eventnya", eventLocation: "The Breeze")
+//                                    EventCard(eventName: "Ini nama eventnya", eventLocation: "The Breeze")
                                 }
                             }
                         } else {
@@ -134,6 +133,8 @@ struct EventView: View {
                     }
                 }
                 .offset(x: universalSize.maxX * 0.28, y: universalSize.maxY * 0.32)
+            }        .task{
+                viewModel.loadSchedule()
             }
             
             Spacer()

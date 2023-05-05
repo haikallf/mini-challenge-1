@@ -14,20 +14,22 @@ struct ProfileView: View {
     @State var isShowDeleteAccountAlert: Bool = false
     @State var isShowLogOutAlert: Bool = false
     
+    @StateObject var globalString = GlobalString()
+    
     @State var email: String = ""
     @State var isSecured: Bool = false
     
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                InitialAvatar(initial: "AP", fontSize: 24)
+                InitialAvatar(initial: "\(globalString.fullnamelogin.components(separatedBy: " ").map { String($0.prefix(1))}.joined().prefix(2))", fontSize: 24, size: 50).textCase(.uppercase)
                 
                 VStack(alignment: .leading) {
-                    Text("Andini Putri")
+                    Text(globalString.fullnamelogin)
                         .font(.title2)
                         .fontWeight(.bold)
                     
-                    Text(verbatim: "andini@email.com")
+                    Text(verbatim: globalString.emaillogin)
                         .font(.footnote)
                         .foregroundColor(Color("tertiaryGray"))
                 }

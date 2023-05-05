@@ -8,23 +8,24 @@
 import SwiftUI
 
 struct EventCard: View {
-    var eventName: String
+//    var eventName: String
     var isPending: Bool = false
-    var isOwner: Bool = false
-    var isHappening: Bool = false
+//    var isOwner: Bool = false
+//    var isHappening: Bool = false
     
     @State var isShowRejectAlert: Bool = false
+    var member: ScheduleMember
     
     var body: some View {
-        NavigationLink(destination: EventDetailView()) {
+        NavigationLink(destination: EventDetailView(member: member)) {
             HStack {
-                if (isPending) {
+                if (member.status_member == "Pending") {
                     Rectangle()
                         .fill(Color("gray"))
                         .frame(maxWidth: 4)
                         .clipShape(Capsule())
                 } else {
-                    if (isOwner) {
+                    if (member.status_member == "Owner") {
                         Rectangle()
                             .fill(Color("indigo"))
                             .frame(maxWidth: 4)
@@ -39,16 +40,16 @@ struct EventCard: View {
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        if (isHappening) {
-                            EventTag() 
+                        if (member.schedule.status_schedule == "Ongoing") {
+                            EventTag(member : member) 
                         } else {
-                            Text("Thursday, 27 April 2023 16.00")
+                            Text("\(member.schedule.tanggal), \(member.schedule.waktu)")
                                 .foregroundColor(Color("gray"))
                                 .font(.system(size: 12))
                         }
                         
                         
-                        Text(eventName)
+                        Text("\(member.schedule.nama)")
                             .foregroundColor(.black)
                             .font(.system(size: 16))
                             .fontWeight(.semibold)
@@ -62,7 +63,7 @@ struct EventCard: View {
                                 .frame(width: 16)
                                 .foregroundColor(.blue)
                             
-                            Text("The Breeze")
+                            Text("\(member.schedule.namatempat)")
                                 .font(.system(size: 13))
                                 .padding(.leading, -2)
                                 .foregroundColor(.black)
@@ -71,7 +72,7 @@ struct EventCard: View {
                     
                     Spacer()
                     
-                   if (isPending) {
+                    if (member.status_member == "Pending") {
                         VStack {
                             Spacer()
                             
@@ -117,6 +118,6 @@ struct EventCard: View {
 
 struct EventCard_Previews: PreviewProvider {
     static var previews: some View {
-        EventCard(eventName: "Event")
+        EventCard(member: ScheduleMember(id: 0, schedule: Schedule(id: 0, created_at: "", user: User(email: "", fullname: ""), nama: "", latitude: "", longitude: "", alamat: "", namatempat: "", tanggal: "", waktu: "", status_schedule: "", note: ""), member: User(email: "", fullname: ""), created_at: "", status_member: ""))
     }
 }

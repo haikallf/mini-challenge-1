@@ -11,18 +11,18 @@ import CoreLocation
 struct EditEventModal: View {
     @Environment(\.dismiss) var dismiss
     
-    @State var eventTitle: String = "Mini Challenge 1"
+    @State var eventTitle: String
     @State var eventDate: Date = Date()
     @State var eventTime: Date = Date()
     @State var selectedLocation: Place? = nil
     
     // this is temporary
-    @State var eventLocation: String = "The Breeze"
-    @State var eventStreet: String = "BSD Green Office Park"
+    @State var eventLocation: String
+    @State var eventStreet: String
     
     let eventCoordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: -6.305968, longitude: 106.672272)
     @State var eventGuests: [String] = ["haikalfadil@email.com", "satria@email.com"]
-    @State var eventNotes: String = "Jangan lupa bawa laptop"
+    @State var eventNotes: String 
     
     @State var isShowCancelAlert: Bool = false
     @State var isShowAddGuestModal: Bool = false
@@ -31,7 +31,7 @@ struct EditEventModal: View {
     @State var isTimePickerDisabled: Bool = true
        
     func isFormValid() -> Bool {
-        return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && eventLocation != "" && !eventGuests.isEmpty && eventNotes != "")
+        return (eventTitle != "" && eventNotes != "")
     }
 
     var body: some View {
@@ -180,6 +180,6 @@ struct EditEventModal: View {
 
 struct EditEventModal_Previews: PreviewProvider {
     static var previews: some View {
-        EditEventModal()
+        EditEventModal(eventTitle: "", eventLocation: "", eventStreet: "", eventNotes: "")
     }
 }
