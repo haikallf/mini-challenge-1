@@ -20,7 +20,7 @@ struct ProfileView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                InitialAvatar(initial: "AP", fontSize: 24)
+                InitialAvatar(initial: "AP", fontSize: 24, size: 45)
                 
                 VStack(alignment: .leading) {
                     Text("Andini Putri")
