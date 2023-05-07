@@ -24,8 +24,10 @@ struct NewEventModal: View {
     
     @State var isTimePickerDisabled: Bool = true
     
+    let currentTime: Date = Date()
+    
     func isFormValid() -> Bool {
-        return (eventTitle != "" && eventTime > Date() + (5 * 60 * 24) && selectedLocation != nil && !eventGuests.isEmpty && eventNotes != "")
+        return (eventTitle != "" && eventTime >= currentTime && selectedLocation != nil && !eventGuests.isEmpty && eventNotes != "")
     }
     
     var body: some View {
